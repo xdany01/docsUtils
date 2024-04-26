@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <meta charset="utf-8">
+    <title>string-fn.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Arrays.html">Arrays</a><ul class='methods'><li data-type='method'><a href="module-Arrays.html#.accumulate">accumulate</a></li><li data-type='method'><a href="module-Arrays.html#.average">average</a></li><li data-type='method'><a href="module-Arrays.html#.chunk">chunk</a></li><li data-type='method'><a href="module-Arrays.html#.countOccurrences">countOccurrences</a></li><li data-type='method'><a href="module-Arrays.html#.firstIndex">firstIndex</a></li><li data-type='method'><a href="module-Arrays.html#.getIntersection">getIntersection</a></li><li data-type='method'><a href="module-Arrays.html#.indexOfMax">indexOfMax</a></li><li data-type='method'><a href="module-Arrays.html#.indexOfMin">indexOfMin</a></li><li data-type='method'><a href="module-Arrays.html#.indices">indices</a></li><li data-type='method'><a href="module-Arrays.html#.isEqualArray">isEqualArray</a></li><li data-type='method'><a href="module-Arrays.html#.lastIndex">lastIndex</a></li><li data-type='method'><a href="module-Arrays.html#.partition">partition</a></li><li data-type='method'><a href="module-Arrays.html#.randomItem">randomItem</a></li><li data-type='method'><a href="module-Arrays.html#.range">range</a></li><li data-type='method'><a href="module-Arrays.html#.removeDuplicate">removeDuplicate</a></li><li data-type='method'><a href="module-Arrays.html#.shuffle">shuffle</a></li><li data-type='method'><a href="module-Arrays.html#.swapItems">swapItems</a></li></ul></li><li><a href="module-Numbers.html">Numbers</a><ul class='methods'><li data-type='method'><a href="module-Numbers.html#.randomNumberGenerator">randomNumberGenerator</a></li><li data-type='method'><a href="module-Numbers.html#.toFixed">toFixed</a></li></ul></li><li><a href="module-Objects.html">Objects</a><ul class='methods'><li data-type='method'><a href="module-Objects.html#.countBy">countBy</a></li><li data-type='method'><a href="module-Objects.html#.groupBy">groupBy</a></li><li data-type='method'><a href="module-Objects.html#.isEqualObj">isEqualObj</a></li><li data-type='method'><a href="module-Objects.html#.maxBy">maxBy</a></li><li data-type='method'><a href="module-Objects.html#.minBy">minBy</a></li><li data-type='method'><a href="module-Objects.html#.pluck">pluck</a></li><li data-type='method'><a href="module-Objects.html#.removeNullUndefined">removeNullUndefined</a></li><li data-type='method'><a href="module-Objects.html#.renameKeys">renameKeys</a></li><li data-type='method'><a href="module-Objects.html#.sortBy">sortBy</a></li><li data-type='method'><a href="module-Objects.html#.sortObj">sortObj</a></li><li data-type='method'><a href="module-Objects.html#.toObject">toObject</a></li></ul></li><li><a href="module-String.html">String</a><ul class='methods'><li data-type='method'><a href="module-String.html#.bytesString">bytesString</a></li><li data-type='method'><a href="module-String.html#.camelToKebab">camelToKebab</a></li><li data-type='method'><a href="module-String.html#.capitalize">capitalize</a></li><li data-type='method'><a href="module-String.html#.characterCount">characterCount</a></li><li data-type='method'><a href="module-String.html#.concatWS">concatWS</a></li><li data-type='method'><a href="module-String.html#.countWords">countWords</a></li><li data-type='method'><a href="module-String.html#.decodeHtmlEntities">decodeHtmlEntities</a></li><li data-type='method'><a href="module-String.html#.decomposeUrl">decomposeUrl</a></li><li data-type='method'><a href="module-String.html#.ext">ext</a></li><li data-type='method'><a href="module-String.html#.generateString">generateString</a></li><li data-type='method'><a href="module-String.html#.isPalindrome">isPalindrome</a></li><li data-type='method'><a href="module-String.html#.kebabToCamel">kebabToCamel</a></li><li data-type='method'><a href="module-String.html#.mask">mask</a></li><li data-type='method'><a href="module-String.html#.prependNumbers">prependNumbers</a></li><li data-type='method'><a href="module-String.html#.removeEmptyLines">removeEmptyLines</a></li><li data-type='method'><a href="module-String.html#.replaceSpaces">replaceSpaces</a></li><li data-type='method'><a href="module-String.html#.slugify">slugify</a></li><li data-type='method'><a href="module-String.html#.sortLines">sortLines</a></li><li data-type='method'><a href="module-String.html#.toCamelCase">toCamelCase</a></li><li data-type='method'><a href="module-String.html#.toPascalCase">toPascalCase</a></li><li data-type='method'><a href="module-String.html#.trim">trim</a></li><li data-type='method'><a href="module-String.html#.truncate">truncate</a></li><li data-type='method'><a href="module-String.html#.upperCaseWords">upperCaseWords</a></li></ul></li><li><a href="module-Validators.html">Validators</a><ul class='methods'><li data-type='method'><a href="module-Validators.html#.equalArrays">equalArrays</a></li><li data-type='method'><a href="module-Validators.html#.indexInRange">indexInRange</a></li><li data-type='method'><a href="module-Validators.html#.isArray">isArray</a></li><li data-type='method'><a href="module-Validators.html#.isEmptyObj">isEmptyObj</a></li><li data-type='method'><a href="module-Validators.html#.isInteger">isInteger</a></li><li data-type='method'><a href="module-Validators.html#.isOneDimensional">isOneDimensional</a></li><li data-type='method'><a href="module-Validators.html#.isType">isType</a></li><li data-type='method'><a href="module-Validators.html#.isUndefinedOrNull">isUndefinedOrNull</a></li><li data-type='method'><a href="module-Validators.html#.isValidType">isValidType</a></li></ul></li><li><a href="module-Various.html">Various</a><ul class='methods'><li data-type='method'><a href="module-Various.html#.decodeJWT">decodeJWT</a></li><li data-type='method'><a href="module-Various.html#.getTypeOf">getTypeOf</a></li><li data-type='method'><a href="module-Various.html#.myDecodeURI">myDecodeURI</a></li><li data-type='method'><a href="module-Various.html#.myEncodeURI">myEncodeURI</a></li><li data-type='method'><a href="module-Various.html#.randomColorHex">randomColorHex</a></li><li data-type='method'><a href="module-Various.html#.wait">wait</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">string-fn.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module String
+ */
+
+/**
+ * Permite obtener la extensión de un archivo o si se le pasa
+ * un delimitador el último elemento.
+ * @param {string} fileName Cadena de caracteres que se desea fragmentar.
+ * @param {string} delimiter='.' Delimitador del string
+ * @returns {string} Retorna el último elemento posterior al delimitador.
+ */
+export function ext(fileName, delimiter = '.') {
+    return fileName.split(delimiter).pop();
+}
+
+/**
+ * Permite poner en mayúscula el primer carácter de cada palabra de una cadena de carácteres.
+ * @param str Cadena de carácteres a capitalizar por palabra.
+ * @returns {string} Retorna una cadea con cada palabra capitalizada.
+ * @example
+ * uppercaseWords('hello world');
+ * // 'Hello World'
+ */
+export function upperCaseWords(str) {
+    return str
+        .split(' ')
+        .map((w) => `${w.charAt(0).toUpperCase()}${w.slice(1)}`)
+        .join(' ');
+}
+
+/**
+ * Permite convertir a slug una URL.
+ * @param {string} str Cadena de carácteres que se desea hacer slugify.
+ * @returns {string} Retorna un slug URL.
+ * @example
+ * slugify('Chapter One: Once upon a time...');
+ * // 'chapter-one-once-upon-a-time'
+ */
+export function slugify(str) {
+    return str
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^\w-]+/g, '');
+}
+
+/**
+ * Permite reemplazar multiples espacios, retornos de carro y saltos de linea en un texto por un solo espacio.
+ * Opcionalmente se puede indicar que solo limpie los espacios.
+ * @param {string} str Cadena de carácteres que se desea limpiar.
+ * @param all
+ * @returns {string} Retorna una cadena de carácteres limpia.
+ */
+export function replaceSpaces(str, all = true) {
+    if (all) {
+        return str.replace(/\s\s+/g, ' ');
+    }
+    return str.replace(/  +/g, ' ');
+}
+
+/**
+ * Permite convertir un texto en kebab-case a camelCase.
+ * @param {string} str Cadena de carácteres en kebab-case.
+ * @returns {string} Retorna una cadena de carácteres en camelCase.
+ * @example
+ * kebabToCamel('background-color');
+ * // 'backgroundColor'
+ * camelToKebab('backgroundColor'); // 'background-color'
+ */
+export function kebabToCamel(str) {
+    return str.replace(/-./g, (m) => m.toUpperCase()[1]);
+}
+
+/**
+ * Permite convertir un texto en camelCase a kebab-case.
+ * @param {string} str Cadena de carácteres en camelCase.
+ * @returns {string} Retorna una cadena de carácteres en kebab-case.
+ * @example
+ * camelToKebab('backgroundColor');
+ * // 'background-color'
+ */
+export function camelToKebab(str) {
+    return str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+}
+
+/**
+ * Permite obtener la longitud de una cadena en bytes.
+ * @param {string} str Cadena de carácteres a medir.
+ * @returns {Number} Retorna la longitud en bytes de la cadena de carácteres ingresada.
+ * @example
+ * bytesString('hello world');
+ * // 11
+ * bytesString('🎉');
+ * // 4
+ */
+export function bytesString(str) {
+    return new Blob([str]).size;
+}
+
+/**
+ * Permite comprobar si una cadena de carácteres es un palíndromo.
+ * @param {string} str Cadena de carácteres a verificar.
+ * @returns {boolean} Retorna `true` si la cadena es un palíndromo y `false` si no lo es.
+ * @example
+ * isPalindrome('abc');
+ * // false
+ * isPalindrom('abcba');
+ * // true
+ */
+export function isPalindrome(str) {
+    return str === str.split('').reverse().join('');
+}
+
+/**
+ * Permite convertir una cadena de carácteres a PascalCase.
+ * @param {string} str Cadena de carácteres que se desea convertir a PascalCase.
+ * @returns {string} Retorna la cadena de carácteres ingresada en formato PascalCase.
+ * @example
+ * toPascalCase('hello world');
+ * // 'HelloWorld'
+ * toPascalCase('hello.world');
+ * // 'HelloWorld'
+ * toPascalCase('foo_bar-baz');
+ * // FooBarBaz
+ */
+export function toPascalCase(str) {
+    return (str.match(/[a-zA-Z0-9]+/g) || []).map((w) => `${w.charAt(0).toUpperCase()}${w.slice(1)}`).join('');
+}
+
+/**
+ * Permite convertir una cadena de carácteres a camelCase.
+ * @param {string} str Cadena de carácteres que se desea convertir a camelCase.
+ * @returns {string} Retorna la cadena de carácteres ingresada en formato camelCase.
+ * @example
+ * toCamelCase('background-color');
+ * // backgroundColor
+ * toCamelCase('-webkit-scrollbar-thumb');
+ * // WebkitScrollbarThumb
+ * toCamelCase('_hello_world');
+ * // HelloWorld
+ * toCamelCase('hello_world');
+ * // helloWorld
+ */
+export function toCamelCase(str) {
+    return str.trim().replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''));
+}
+
+/**
+ * Permite truncar una cadena de carácteres a la cantidad indicada.
+ * @param {string} str Cadena de carácteres que se desea truncar.
+ * @param {Number} max Cantidad de carácteres a truncar.
+ * @param {string} suffix='...' Cadena de carácteres que se agrega al final.
+ * Por defecto el sufijo es `...`.
+ * @returns {string} Retorna una cadena truncada con el sufijo indicado.
+ * @example
+ * truncate('This is a long message', 20, '...');
+ * // 'This is a long...'
+ */
+export function truncate(str, max, suffix = '...') {
+    return str.length &lt; max ? str : `${str.substring(0, str.substring(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
+}
+
+/**
+ * Permite limpiar una cadena de un caracter especificado.
+ * @param {string} str Cadena de carácteres que se desea limpiar.
+ * @param {char} char Caracter que se desea quitar de la cadena.
+ * @returns {string} Retorna una cadena de carácteres sin el carácter indicado como segundo parametro.
+ * @example
+ * trim('/hello world//', '/');
+ * // hello world
+ * trim('"hello world"', '"');
+ * // hello world
+ * trim('   hello world ', ' ');
+ * // hello world
+ */
+export function trim(str, char) {
+    return str.split(char).filter(Boolean).join();
+}
+
+/**
+ * Permite enmascarar una cadena de carácteres.
+ * @param {string} str Cadena de carácteres que se desea enmascarar.
+ * @param {Number} num Cantidad de carácteres a enmascarar.
+ * @param {string} mask Carácter que será utilizado como mascara.
+ * @returns {string} Retorna una cadena de carácteres enmascarada.
+ * @example
+ * mask(1234567890, 3, '*');
+ * // ***4567890
+ */
+export function mask(str, num, mask) {
+    return `${str}`.slice(num).padStart(`${str}`.length, mask);
+}
+
+/**
+ * Permite obtener la cantidad de ocurrencias de un determinado carácter en una cadena.
+ * @param {string} str Cadena de carácteres a analizar.
+ * @param {char} char Carácter que se busca las ocurrencias.
+ * @returns {Number} Retorna la cantidad de ocurrencias del carácter indicado.
+ * @example
+ * characterCount('192.168.1.1', '.');
+ * // 3
+ * characterCount('star wars', 's');
+ * // 2
+ */
+export function characterCount(str, char) {
+    return str.replace(new RegExp(String.raw`[^${char}]`, 'g'), '').length;
+}
+
+/**
+ * Permite contar la cantidad de palabras en una cadena.
+ * @param {string} str Cadena de carácteres a analizar.
+ * @returns {Number} Retorna la cantidad de palabras de la cadena indicada como parametro.
+ * @example
+ * countWords('Hello World');
+ * // 2
+ * countWords('Hello    World');
+ * // 2
+ * countWords('  Hello  World  ');
+ * // 2
+ */
+export function countWords(str) {
+    return str.trim().split(/\s+/).length;
+}
+
+/**
+ * Permite ordenar líneas de un documento de texto en orden alfabético.
+ * Por defecto lo hace de manera ascendente de la A-Z.
+ * Si se indica `reverse` en `true` lo hace de la Z-A
+ * @param {string} str Texto a ordenar alfabéticamente.
+ * @param {boolean} reverse = false Se utiliza para indicar la direccion del orden.
+ * @returns {string} Retorna el texto en orden alfabético
+ * @example
+ * sortLines(`Thaddeus Mullen
+ * Kareem Marshall
+ * Ferdinand Valentine
+ * Hasad Lindsay
+ * Mufutau Berg
+ * Knox Tyson
+ * Kasimir Fletcher
+ * Colton Sharp
+ * Adrian Rosales
+ * Theodore Rogers`);
+ *
+ * //Output
+ * Adrian Rosales
+ * Colton Sharp
+ * Ferdinand Valentine
+ * Hasad Lindsay
+ * Kareem Marshall
+ * Kasimir Fletcher
+ * Knox Tyson
+ * Mufutau Berg
+ * Thaddeus Mullen
+ * Theodore Rogers
+ */
+
+export function sortLines(str, reverse = false) {
+    if (reverse) {
+        return str.split(/\r?\n/).sort().reverse().join('\n');
+    }
+    return str.split(/\r?\n/).sort().join('\n');
+}
+
+/**
+ * Permite anteponer un número de línea a cada línea de un documento de texto.
+ * @param {string} str
+ * @returns {string}
+ * @example
+ * prependNumbers(`one
+ * two
+ * three
+ * four`);
+ *
+ * //Output
+ * 1 one
+ * 2 two
+ * 3 three
+ * 4 four
+ */
+export function prependNumbers(str) {
+    return str
+        .split(/\r?\n/)
+        .map((line, i) => `${(i + 1).toString().padStart(2, ' ')} ${line}`)
+        .join('\n');
+}
+
+/**
+ * Permite decodificar entidades HTML.
+ * @param {string} str Texto con codificaciones HTML
+ * @returns {string} Retorna el texto decodificado.
+ * @example
+ * const encodedString = "Este texto contiene entidades HTML como &amp;#225; para á y &amp;#233; para é.";
+ * decodeHtmlEntities(encodedString);
+ * //"Este texto contiene entidades HTML como á; para á y é; para é."
+ */
+export function decodeHtmlEntities(str) {
+    return str.replace(/&amp;#(\w+)(^\w|;)?/g, (_, dec) => String.fromCharCode(dec));
+}
+
+/**
+ * Permite capitalizar una cadena de carácteres.
+ * @param {string} str Cadena a capitalizar.
+ * @returns {string} Retorna la cadena capitalizada.
+ * @example
+ * capitalize('hello world');
+ * // 'Hello world'
+ */
+export function capitalize(str) {
+    return `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+}
+
+/**
+ * Permite eliminar líneas vacías de un documento de texto.
+ * @param {string} str Texto que se quiere limpiar.
+ * @returns {string} Retorna el texto limpio de líneas vacías.
+ * @example
+ * removeEmptyLines(`red
+ *
+ * green
+ * blue
+ *
+ * yellow`);
+ *
+ * //Output
+ * red
+ * green
+ * blue
+ * yellow
+ */
+export function removeEmptyLines(str) {
+    return str
+        .split(/\r?\n/)
+        .filter((line) => line.trim() !== '')
+        .join('\n');
+}
+
+/**
+ * Genera una cadena aleatoria a partir de caracteres dados.
+ * @param {Number} length Largo de la cadena a generar.
+ * @param {string} chars Carácteres utilizados de inputs.
+ * @returns {string} Retorna una cadena de carácteres aleatoria con los inputs dados.
+ * @example
+ * generateString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+ * //svKaA17rnl
+ */
+export function generateString(length, chars) {
+    return Array(length)
+        .fill('')
+        .map((v) => chars[Math.floor(Math.random() * chars.length)])
+        .join('');
+}
+
+/**
+ * Permite concatena todas las cadenas que se le pasan como argumento,
+ * separándolas por un espacio, y devuelve la cadena resultante.
+ * Si no se proporcionan cadenas, devuelve una cadena vacía.
+ * @param {string[]} words Sucesión de palabras a concatenar.
+ * @returns {string} Retorna una cadena con todas las palabras concatenadas.
+ * @example
+ * const resultado1 = concatWS("Hola", "mundo");
+ * console.log(resultado1);
+ * // Salida: "Hola mundo"
+ * const resultado2 = concatWS("Esto", "es", "una", "prueba");
+ * console.log(resultado2);
+ * // Salida: "Esto es una prueba"
+ * const resultado3 = concatWS();
+ * console.log(resultado3);
+ * // Salida: ""
+ */
+export function concatWS(...words) {
+    let stringConcat = "";
+    if (!words.length > 0) {
+        return stringConcat;
+    }
+    stringConcat = words.join(" ");
+    return stringConcat;
+}
+
+/**
+ * Permite descomponer una URL separando el protocolo, URL base, los path variables y los query params.
+ * @param {string} url URL que se desea descomponer.
+ * @param {string} separator Signo que indica la separación de los query params.
+ * @returns {{}} retorna un objeto de los componentes encontrados.
+ * @example
+ * decomposeUrl("https://auto.mercadolibre.com.ar...","#")
+ * // {
+ * //     protocol: 'https',
+ * //     baseUrl: 'auto.mercadolibre.com.ar',
+ * //     pathVariables:
+ * //     [
+ * //     'MLA-1739957650-chevrolet-cruze-4-0km-premier-rs-ltz',
+ * //     '-at-',
+ * //     'full',
+ * //     '-stock-2a-fr-_JM'
+ * //     ],
+ * //     queryParams:
+ * //     {
+ * //     position: '3',
+ * //     search_layout: 'grid',
+ * //     type: 'item',
+ * //     tracking_id: '9c06437a-7533-4b38-911b-c7c9dc314929',
+ * //     deal_print_id: 'be4c97b0-fa12-11ee-97d8-9bbae81c6668',
+ * //     c_id: 'carouseldynamic-home',
+ * //     c_element_order: 'undefined',
+ * //     c_campaign: 'AUTOS-Y-CAMIONETAS-PUBLICADOS-HOY',
+ * //     c_uid: 'be4c97b0-fa12-11ee-97d8-9bbae81c6668'
+ * //     }
+ * // }
+ */
+export function decomposeUrl(url, separator = '?') {
+    let result = {
+        protocol: null, baseUrl: null, pathVariables: null, queryParams: null
+    };
+    const indexProtocol = url.indexOf('://');
+    if (indexProtocol !== -1) {
+        result.protocol = url.slice(0, indexProtocol);
+    }
+    const urlWithoutProtocol = url.replace(/^(https|http):\/\//, '');
+    const indexQueryParams = urlWithoutProtocol.indexOf(separator);
+    const urlWithoutQueryParams = indexQueryParams !== -1 ? urlWithoutProtocol.slice(0, indexQueryParams) : urlWithoutProtocol;
+    const indexPathVariables = urlWithoutQueryParams.indexOf('/');
+    result.baseUrl = urlWithoutQueryParams;
+    if (indexPathVariables !== -1) {
+        result.baseUrl = urlWithoutQueryParams.slice(0, indexPathVariables);
+        const allPathVariables = urlWithoutQueryParams.slice(indexPathVariables, urlWithoutQueryParams.length);
+        result.pathVariables = allPathVariables.split('/').filter(s => s !== '');
+    }
+    if (indexQueryParams !== -1) {
+        const queryParams = urlWithoutProtocol.slice(indexQueryParams + 1, urlWithoutProtocol.length);
+        result.queryParams = Array.from(new URLSearchParams(queryParams)).reduce((p, [k, v]) => Object.assign({}, p, {[k]: p[k] ? (Array.isArray(p[k]) ? p[k] : [p[k]]).concat(v) : v}), {});
+    }
+    return result;
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Hecho con <small>❤</small> por <a
+        href="https://github.com/xdany01">@xdany01</a> usando la plantilla de <a
+        href="https://github.com/clenemt/docdash">docdash</a>.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>
