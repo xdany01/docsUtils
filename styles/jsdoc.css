@@ -758,10 +758,6 @@ html[data-search-mode] .level-hide {
     margin-left: 30px;
 }
 
-.package {
-
-}
-
 .package h3 {
     color: #660066;
     user-select: none;
@@ -769,7 +765,8 @@ html[data-search-mode] .level-hide {
     border-bottom: 2px solid #6d426d;
     margin-bottom: 20px;
 }
-.package img{
+
+.package img {
     border: 1px solid #f4f4f4;
     box-shadow: 0 10px 15px rgba(69, 69, 69, .3);
     margin-bottom: 50px;
