@@ -758,12 +758,15 @@ html[data-search-mode] .level-hide {
     margin-left: 30px;
 }
 
-.package h3 {
+.package.home h3 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    line-height: 100%;
+    word-wrap: break-word;
     color: #660066;
     user-select: none;
-    padding-block: 5px;
+    padding-block: 10px;
     border-bottom: 2px solid #6d426d;
-    margin-bottom: 20px;
 }
 
 .package img {
