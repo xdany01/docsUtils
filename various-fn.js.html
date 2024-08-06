@@ -436,9 +436,12 @@ export function generateShades(hex, numOfShades = 10, percentageDifference = 10)
  */
 export function parseStringToJSON(str, separatorPair = ';', separatorValue = '=') {
     const result = {};
-    const pairs = str.split(separatorPair).map(pair => pair.trim()); // Divide la cadena en pares clave-valor y elimina espacios en blanco.
+    const pairs = str.split(separatorPair).filter(Boolean).map(pair => pair.trim()); // Divide la cadena en pares clave-valor y elimina espacios en blanco.
     pairs.forEach(pair => {
-        const [key, value] = pair.split(separatorValue); // Divide el par en clave y valor.
+        // Divide el par en clave y valor.
+        const sep = pair.indexOf(separatorValue);
+        const key = pair.substring(0, sep);
+        const value = pair.substring(sep + 1);
         let parsedValue;
         if (value === undefined) { // Comprueba si el valor es indefinido.
             parsedValue = '';
