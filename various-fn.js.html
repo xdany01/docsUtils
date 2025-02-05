@@ -855,7 +855,7 @@ export function selectorContent($, selectors, defaultValue, isArr = false, txt =
         a
             ? [...$(s)] // Retorna un array de nodos si 'a' es true.
             : t
-                ? $(s).first().text().replaceAll(/\/n\/r/g, '').trim() // Retorna el texto, limpiando saltos de línea.
+                ? $(s).first().text().replace(/\s\s+/g, ' ').trim() // Retorna el texto, limpiando saltos de línea.
                 : $(s).first().html(); // Retorna el HTML del primer elemento encontrado.
 
     let result = defaultValue; // Inicializa el resultado con el valor por defecto.
