@@ -1083,7 +1083,7 @@ export class AnsiColors {
 }
 
 /**
- * Clase que representa una secuencia generadora de números.
+ * Clase que representa una secuencia numérica.
  * @example
  * const rank = new Sequence();
  *
@@ -1093,32 +1093,35 @@ export class AnsiColors {
  */
 class Sequence {
     /**
-     * Constructor que inicializa la secuencia a partir de un valor dado.
-     * @param {number} start - El valor inicial de la secuencia, por defecto es 1.
+     * Crea una nueva instancia de la clase Sequence.
+     * @param {number} increment - El valor por el cual se incrementará la secuencia.
+     * @param {number} start - El valor inicial de la secuencia.
      */
-    constructor(start = 1) {
-        // Inicializa el generador llamando al método privado #createGenerator
-        this.generator = this.#createGenerator(start);
+    constructor(increment = 1, start = 0) {
+        // Inicializa el generador con los parámetros proporcionados.
+        this.generator = this.#createGenerator(increment, start);
     }
 
     /**
-     * Método generador privado que crea una secuencia infinita de números.
+     * Generador privado que produce una secuencia de números.
+     * @param {number} increment - El valor por el cual se incrementará cada número.
      * @param {number} start - El valor inicial de la secuencia.
      * @yields {number} - El siguiente número en la secuencia.
      */
-    * #createGenerator(start) {
-        let id = start; // Inicializa el identificador con el valor de inicio
+    * #createGenerator(increment, start) {
+        let id = start; // Inicializa el identificador con el valor de inicio.
         while (true) {
-            yield id++; // Devuelve el valor actual y lo incrementa
+            // Produce el siguiente número en la secuencia y lo incrementa.
+            yield id += increment;
         }
     }
 
     /**
-     * Método que obtiene el siguiente valor de la secuencia.
+     * Devuelve el siguiente valor de la secuencia.
      * @returns {number} - El siguiente número en la secuencia.
      */
     next() {
-        // Llama al método next del generador y devuelve el valor generado
+        // Llama al generador para obtener el siguiente valor.
         return this.generator.next().value;
     }
 }

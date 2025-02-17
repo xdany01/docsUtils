@@ -57,7 +57,7 @@
         
         </h2>
         
-            <div class="class-description usertext"><p>Clase que representa una secuencia generadora de números.</p></div>
+            <div class="class-description usertext"><p>Clase que representa una secuencia numérica.</p></div>
         
     
 </header>
@@ -72,7 +72,7 @@
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="Sequence"><span class="type-signature"></span>new Sequence<span class="signature">(start)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Sequence"><span class="type-signature"></span>new Sequence<span class="signature">(increment, start)</span><span class="type-signature"></span></h4>
 
     
 
@@ -82,7 +82,7 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Constructor que inicializa la secuencia a partir de un valor dado.</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Crea una nueva instancia de la clase Sequence.</p></li></ul></dd>
     
 
     
@@ -168,7 +168,7 @@
 
         <tr>
             
-                <td class="name"><code>start</code></td>
+                <td class="name"><code>increment</code></td>
             
 
             <td class="type">
@@ -191,7 +191,37 @@
                 </td>
             
 
-            <td class="description last"><p>El valor inicial de la secuencia, por defecto es 1.</p></td>
+            <td class="description last"><p>El valor por el cual se incrementará la secuencia.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>start</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>El valor inicial de la secuencia.</p></td>
         </tr>
 
     
@@ -242,7 +272,7 @@
 
     
 
-    <h4 class="name" id=""><span class="type-signature type-signature-generator">(generator) </span><span class="signature">(start)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    <h4 class="name" id=""><span class="type-signature type-signature-generator">(generator) </span><span class="signature">(increment, start)</span><span class="type-signature"> &rarr; {number}</span></h4>
 
     
 
@@ -252,13 +282,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Método generador privado que crea una secuencia infinita de números.</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Generador privado que produce una secuencia de números.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="various-fn.js.html">various-fn.js</a>, <a href="various-fn.js.html#line1060">line 1060</a>
+        <a href="various-fn.js.html">various-fn.js</a>, <a href="various-fn.js.html#line1062">line 1062</a>
     </li></ul>
     </dd>
     
@@ -327,6 +357,30 @@
     </thead>
 
     <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>increment</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>El valor por el cual se incrementará cada número.</p></td>
+        </tr>
+
     
 
         <tr>
@@ -411,13 +465,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Método que obtiene el siguiente valor de la secuencia.</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Devuelve el siguiente valor de la secuencia.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="various-fn.js.html">various-fn.js</a>, <a href="various-fn.js.html#line1071">line 1071</a>
+        <a href="various-fn.js.html">various-fn.js</a>, <a href="various-fn.js.html#line1074">line 1074</a>
     </li></ul>
     </dd>
     
