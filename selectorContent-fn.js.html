@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>numbers-fn.js - Documentation</title>
+    <title>selectorContent-fn.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -37,7 +37,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">numbers-fn.js</h1>
+    <h1 class="page-title">selectorContent-fn.js</h1>
     
 
     
@@ -48,199 +48,360 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @module Numbers
- */
-/**
- * Trunca un número a un número determinado de decimales sin redondear.
- * @param {Number} n Numero a truncar
- * @param {Number} fixed Cantidad de decimales.
- * @returns {string} Retorna un string con el numero truncado.
+ * Clase para extraer y procesar información de documentos HTML utilizando selectores CSS.
+ * Requiere de cheerio para la manipulacion del HTML y de Validator para la validacion de valores vacios o nulos.
+ *
+ * @class SelectorContent
+ * @requires cheerio - Para la manipulación DOM-like del HTML
+ * @requires Validator - Para validación de valores vacíos o nulos
  * @example
- * toFixed(25.198726354, 1);
- * // 25.1
- * toFixed(25.198726354, 2);
- * // 25.19
- * toFixed(25.198726354, 3);
- * // 25.198
- * toFixed(25.198726354, 4);
- * // 25.1987
- * toFixed(25.198726354, 5);
- * // 25.19872
- * toFixed(25.198726354, 6);
- * // 25.198726
+ * // Crear una instancia con HTML
+ * const html = '&lt;div>&lt;h1>Título&lt;/h1>&lt;p>Contenido&lt;/p>&lt;/div>';
+ * const content = new SelectorContent(html);
+ *
+ * // Extraer texto de un elemento
+ * const title = content.getContent({
+ *   selectors: 'h1',
+ *   defaultValue: 'Sin título'
+ * });
+ * // Resultado: "Título"
  */
-export function toFixed(n, fixed) {
-    return `${n}`.match(new RegExp(`^-?\\d+(?:\.\\d{0,${fixed}})?`))[0];
-}
-
-/**
- * Permite generar un número aleatorio multiplo de `range` dentro
- * del rango ajustado `min` y `max`.
- * @param {number} min Valor mínimo del rango de números.
- * @param {number} max Valor máximo del rango de números.
- * @param {number} range=100 Brecha entre los distintos múmeros que se desea como resultado.
- * @returns {number} Retorna un numero aleatorio multiplo de `range`.
- * @example
- * // Genera un número aleatorio entre 500 y 1000 en múltiplos de 50
- * const numeroAleatorio = randomNumberGenerator(500, 1000, 50);
- * console.log(numeroAleatorio);
- * // Puede imprimir, por ejemplo, 750 o 850.
- */
-export function randomNumberGenerator(min, max, range = 100) {
-    min = Math.ceil(min / range) * range;
-    max = Math.floor(max / range) * range;
-    return Math.floor(Math.random() * ((max - min) / range + 1)) * range + min;
-}
-
-/**
- * Función para generar una secuencia de Fibonacci hasta el número n.
- * @param {number} n - Número hasta el cual se generará la secuencia de Fibonacci.
- * @returns {Array} - Secuencia de Fibonacci hasta el número n.
- * @example
- * console.log(fibonacci(6)); // [0, 1, 1, 2, 3, 5]
- */
-export function fibonacci(n) {
-    // Crear un array de longitud n y reducirlo para generar la secuencia de Fibonacci
-    return Array.from({length: n}).reduce(
-        (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
-        []
-    );
-}
-
-/**
- * Genera un array de números enteros aleatorios dentro de un rango dado.
- * @param {number} min - Valor mínimo del rango.
- * @param {number} max - Valor máximo del rango.
- * @param {number} n - Cantidad de números aleatorios a generar (por defecto es 1).
- * @returns {Array} - Array de números enteros aleatorios.
- * @example
- * console.log(randomIntArrayInRange(12, 35, 10));
- * // [ 34, 14, 27, 17, 30, 27, 20, 26, 21, 14 ]
- */
-export function randomIntArrayInRange(min, max, n = 1) {
-    // Crea un array con la longitud especificada y llena cada posición con un número aleatorio en el rango dado.
-    return Array.from(
-        {length: n},
-        () => Math.floor(Math.random() * (max - min + 1)) + min
-    );
-}
-
-/**
- * Función para calcular el máximo común divisor de múltiples números.
- * @param {...number} arr - Números de los cuales se calculará el máximo común divisor.
- * @returns {number} - El máximo común divisor de los números proporcionados.
- * @example
- * console.log(gcdMultiple(8, 36)) // 4
- * console.log(gcdMultiple(...[12, 8, 32])) // 4
- */
-export function gcdMultiple(...arr) {
-    return [...arr].reduce((a, b) => {
-        // Función recursiva para calcular el máximo común divisor de dos números.
-        const gcd = (a, b) => (!b ? a : gcd(b, a % b));
-        return gcd(a, b);
-    });
-}
-
-/**
- * Función para calcular el mínimo común múltiplo de múltiples números.
- * @param {...number} arr - Números de los cuales se calculará el mínimo común múltiplo.
- * @returns {number} El mínimo común múltiplo de los números proporcionados.
- * @example
- * console.log(lcmMultiple(12, 7)); // 84
- * console.log(lcmMultiple(...[1, 3, 4, 5])); // 60
- */
-export function lcmMultiple(...arr) {
-    // Reducir el array de números para calcular el mínimo común múltiplo
-    return [...arr].reduce((a, b) => {
-        // Función para calcular el máximo común divisor
-        const gcd = (a, b) => (!b ? a : gcd(b, a % b));
-        // Función para calcular el mínimo común múltiplo
-        const lcm = (x, y) => (x * y) / gcd(x, y);
-        // Retornar el mínimo común múltiplo de dos números
-        return lcm(a, b);
-    });
-}
-
-/**
- * Función que genera una progresión aritmética hasta un límite dado.
- * @param {number} n - El paso de la progresión aritmética.
- * @param {number} lim - El límite superior de la progresión aritmética.
- * @returns {Array} - Un array con la progresión aritmética generada.
- * @example
- * console.log(arithmeticProgression(5, 25)); // [5, 10, 15, 20, 25]
- */
-export function arithmeticProgression(n, lim) {
-    // Creamos un array con la longitud necesaria para cubrir el límite superior dado.
-    return Array.from({length: Math.ceil(lim / n)}, (_, i) => (i + 1) * n);
-}
-
-/**
- * Función que calcula una progresión geométrica.
- * @param {number} end - El valor final de la progresión.
- * @param {number} start - El valor inicial de la progresión (por defecto es 1).
- * @param {number} step - El paso de la progresión (por defecto es 2).
- * @returns {Array} - Un array con la progresión geométrica.
- * @example
- * console.log(geometricProgression(256)) // [1, 2, 4, 8, 16, 32, 64, 128, 256]
- * console.log(geometricProgression(256, 3)) // [3, 6, 12, 24, 48, 96, 192]
- * console.log(geometricProgression(256, 1, 4)) // [1, 4, 16, 64, 256]
- */
-export function geometricProgression(end, start = 1, step = 2) {
-    // Calcula la longitud del array basado en la fórmula de la progresión geométrica.
-    return Array.from({
-        length: Math.floor(Math.log(end / start) / Math.log(step)) + 1,
-    }).map((_, i) => start * step ** i); // Genera cada elemento de la progresión.
-}
-
-/**
- * Función recursiva para calcular el factorial de un número.
- * @param {number} n - Número del cual se calculará el factorial.
- * @returns {number} - El factorial de n.
- * @example
- * console.log(factorial(6)); // Imprime el factorial de 6: 720
- */
-export function factorial(n) {
-    // Comprueba si el número es negativo
-    return n &lt; 0
-        ? (() => {
-            throw new TypeError('¡Los números negativos no están permitidos!');
-        })()
-        // Comprueba si el número es 0 o 1
-        : n &lt;= 1
-            ? 1
-            // Calcula el factorial recursivamente
-            : n * factorial(n - 1);
-}
-
-/**
- * Función que calcula el logaritmo en base b de n.
- * @param {number} b - Base del logaritmo.
- * @param {number} n - Número del cual se calcula el logaritmo.
- * @returns {number} - Resultado del logaritmo en base b de n.
- * @example
- * console.log(logBase(5, 25)); // Muestra el resultado del logaritmo en base 5 de 25, que debería ser 2.
- * console.log(logBase(5, 625)); // Muestra el resultado del logaritmo en base 5 de 625, que debería ser 4.
- */
-export function logBase(b, n) {
-    return Math.log(n) / Math.log(b); // Calcula el logaritmo en base b de n utilizando la fórmula de cambio de base.
-}
-
-/**
- * Redondea un número a una cantidad específica de decimales.
- * @param {number} numero - El número que se desea redondear.
- * @param {number} decimales - La cantidad de decimales a los que se redondeará el número.
- * @returns {number} - El número redondeado.
- * @throws {Error} - Lanza un error si el valor proporcionado no es un número válido.
- */
-export function roundNumber(numero, decimales) {
-    const num = parseFloat(numero); // Convierte el valor de 'numero' a un número de punto flotante.
-    if (isNaN(num)) { // Verifica si 'num' es NaN (no es un número).
-        throw new Error("El valor proporcionado no es un número válido."); // Lanza un error si 'num' no es un número.
+export class SelectorContent {
+    /**
+     * Crea una instancia de SelectorContent
+     * @param {string} html - Contenido HTML a procesar
+     * @example
+     * const html = '&lt;div>&lt;h1>Título&lt;/h1>&lt;p>Contenido&lt;/p>&lt;/div>';
+     * const content = new SelectorContent(html);
+     */
+    constructor(html) {
+        /**
+         * Función de selección de cheerio, equivalente a jQuery
+         * @type {Function}
+         * @private
+         */
+        this.$ = cheerio.load(html);
     }
-    const factor = Math.pow(10, decimales); // Calcula el factor de multiplicación basado en la cantidad de decimales.
-    return Math.round(num * factor) / factor; // Redondea el número y lo divide por el factor para obtener el resultado final.
-}
-</code></pre>
+
+    /**
+     * Obtiene contenido basado en selectores con fallbacks
+     * @param {Object} options - Opciones de configuración
+     * @param {string|Array} options.selectors - Selector único o array de selectores
+     * @param {*} options.defaultValue - Valor predeterminado si no se encuentra contenido
+     * @param {boolean} options.toArray - Si es true, devuelve array de elementos
+     * @param {boolean} options.toText - Si es true, devuelve texto, si es false, devuelve HTML
+     * @param {boolean} options.completed - Si es true, devuelve objeto completo con información adicional
+     * @returns {*} - Contenido encontrado o valor predeterminado, u objeto completo si completed=true
+     * @requires Validator - Para validar si un resultado está vacío
+     * @example
+     * // Ejemplo básico
+     * const title = content.getContent({
+     *   selectors: 'h1',
+     *   defaultValue: 'Sin título'
+     * });
+     * // Resultado: "Título"
+     *
+     * @example
+     * // Usando múltiples selectores con fallback
+     * const price = content.getContent({
+     *   selectors: ['.price', '.cost', 'span.value'],
+     *   defaultValue: '0',
+     *   toText: true
+     * });
+     *
+     * @example
+     * // Obteniendo HTML en lugar de texto
+     * const htmlContent = content.getContent({
+     *   selectors: '.product-description',
+     *   toText: false
+     * });
+     *
+     * @example
+     * // Usando el modo completed para obtener información detallada
+     * const result = content.getContent({
+     *   selectors: ['.price', '.cost'],
+     *   completed: true
+     * });
+     * // Resultado: {
+     * //   selectors: ['.price', '.cost'],
+     * //   matchSelector: '.price',
+     * //   result: '100'
+     * // }
+     */
+    getContent({selectors, defaultValue = null, toArray = false, toText = true, completed = false}) {
+        if (!selectors) return defaultValue;
+
+        let resultData;
+
+        if (Array.isArray(selectors)) {
+            resultData = this.processMultipleSelectors(selectors, toArray, toText);
+        } else if (typeof selectors === 'string') {
+            const result = this.processSelector(selectors, toArray, toText);
+            resultData = {
+                selectors: selectors,
+                matchSelector: Validator.isEmpty(result) ? null : selectors,
+                result: result
+            };
+        }
+
+        // Verificar si el resultado está vacío y aplicar valor por defecto si es necesario
+        if (Validator.isEmpty(resultData.result)) {
+            resultData.result = defaultValue;
+        }
+
+        // Retornar formato según la bandera completed
+        return completed ? resultData : resultData.result;
+    }
+
+    /**
+     * Procesa un array de selectores y devuelve el primer resultado no vacío
+     * @param {Array} selectors - Array de selectores a procesar
+     * @param {boolean} toArray - Si es true, devuelve un array de elementos
+     * @param {boolean} toText - Si es true, devuelve texto, si es false, devuelve HTML
+     * @returns {Object} - Objeto con el resultado, selector utilizado y todos los selectores
+     * @requires Validator - Para verificar si un resultado está vacío
+     * @example
+     * // Internamente usado por getContent
+     * const result = this.processMultipleSelectors(
+     *   ['.price', '.cost', 'span.value'],
+     *   false,
+     *   true
+     * );
+     * // Si '.price' existe y contiene "100":
+     * // Resultado: {
+     * //   selectors: ['.price', '.cost', 'span.value'],
+     * //   matchSelector: '.price',
+     * //   result: '100'
+     * // }
+     */
+    processMultipleSelectors(selectors, toArray, toText) {
+        for (const selector of selectors) {
+            const result = this.processSingleSelector(selector, toArray, toText);
+            if (!Validator.isEmpty(result)) {
+                return {
+                    selectors: selectors,
+                    matchSelector: selector,
+                    result: result
+                };
+            }
+        }
+
+        return {
+            selectors: selectors,
+            matchSelector: null,
+            result: null
+        };
+    }
+
+    /**
+     * Procesa un solo selector que puede ser string o array [selector, attribute]
+     * @param {string|Array} selector - Selector o array [selector, atributo]
+     * @param {boolean} toArray - Si es true, devuelve un array de elementos
+     * @param {boolean} toText - Si es true, devuelve texto, si es false, devuelve HTML
+     * @returns {string|Array|null} - Resultado del procesamiento del selector
+     * @example
+     * // Procesar un selector de texto
+     * const result = this.processSingleSelector('h1', false, true);
+     * // Resultado: "Título"
+     *
+     * @example
+     * // Procesar un selector de atributo
+     * const href = this.processSingleSelector(['a.link', 'href'], false, true);
+     * // Resultado: "https://example.com"
+     */
+    processSingleSelector(selector, toArray, toText) {
+        if (Array.isArray(selector) &amp;&amp; selector.length >= 2) {
+            return this.getAttributeValue(selector[0], selector[1]);
+        } else if (typeof selector === 'string') {
+            return this.processSelector(selector, toArray, toText);
+        }
+        return null;
+    }
+
+    /**
+     * Procesa elementos según el selector especificado
+     * @param {string} selector - Selector CSS para buscar elementos
+     * @param {boolean} toArray - Si es true, devuelve un array de elementos, si es false, devuelve un solo elemento
+     * @param {boolean} toText - Si es true, devuelve el texto del elemento, si es false, devuelve el HTML
+     * @returns {Array|string} - Array de elementos o texto/HTML del primer elemento
+     * @requires cheerio - Para la selección de elementos
+     * @example
+     * // Obtener texto de un elemento
+     * const titleText = this.processSelector('h1', false, true);
+     * // Resultado: "Título"
+     *
+     * @example
+     * // Obtener HTML de un elemento
+     * const titleHtml = this.processSelector('h1', false, false);
+     * // Resultado: "Título"
+     *
+     * @example
+     * // Obtener array de elementos
+     * const paragraphs = this.processSelector('p', true, false);
+     * // Resultado: [&lt;p>Párrafo 1&lt;/p>, &lt;p>Párrafo 2&lt;/p>]
+     */
+    processSelector(selector, toArray, toText) {
+        const elements = this.getElements(selector);
+
+        if (toArray) {
+            return this.elementsToArray(elements);
+        }
+
+        return toText
+            ? this.getCleanText(elements)
+            : this.getHtml(elements);
+    }
+
+    /**
+     * Verifica si un valor está vacío y devuelve un valor predeterminado si es así
+     * @param {*} value - Valor a verificar
+     * @param {*} defaultValue - Valor predeterminado a devolver si está vacío
+     * @returns {*} - Valor original o valor predeterminado
+     * @requires Validator - Para verificar si un valor está vacío
+     * @example
+     * // Valor no vacío
+     * const result = this.getValueOrDefault("Texto", "Predeterminado");
+     * // Resultado: "Texto"
+     *
+     * @example
+     * // Valor vacío
+     * const result = this.getValueOrDefault("", "Predeterminado");
+     * // Resultado: "Predeterminado"
+     *
+     * @example
+     * // Valor null
+     * const result = this.getValueOrDefault(null, "Predeterminado");
+     * // Resultado: "Predeterminado"
+     */
+    getValueOrDefault(value, defaultValue) {
+        return Validator.isEmpty(value) ? defaultValue : value;
+    }
+
+    /**
+     * Obtiene elementos que coinciden con un selector
+     * @param {string} selector - Selector CSS para buscar elementos
+     * @returns {Object} - Objeto jQuery/Cheerio con los elementos encontrados
+     * @requires cheerio - Para la selección de elementos
+     * @example
+     * // Obtener todos los párrafos
+     * const paragraphs = this.getElements('p');
+     * // Resultado: Objeto Cheerio con todos los elementos &lt;p>
+     *
+     * @example
+     * // Selector más complejo
+     * const items = this.getElements('ul.menu > li.item');
+     * // Resultado: Objeto Cheerio con los elementos &lt;li class="item"> dentro de &lt;ul class="menu">
+     *
+     * @example
+     * // Selector vacío
+     * const empty = this.getElements('');
+     * // Resultado: Objeto Cheerio vacío
+     */
+    getElements(selector) {
+        if (!selector) {
+            return this.$('');
+        }
+        return this.$(selector);
+    }
+
+    /**
+     * Obtiene el valor de un atributo de un elemento
+     * @param {string} selector - Selector CSS para encontrar el elemento
+     * @param {string} attribute - Nombre del atributo a obtener
+     * @returns {string|null} - Valor del atributo o null si el elemento no existe
+     * @requires cheerio - Para la selección de atributos
+     * @example
+     * // Obtener el valor del atributo href de un enlace
+     * const href = this.getAttributeValue('a.link', 'href');
+     * // Resultado: "https://example.com"
+     *
+     * @example
+     * // Obtener el valor de un atributo personalizado
+     * const dataId = this.getAttributeValue('.product', 'data-id');
+     * // Resultado: "12345"
+     *
+     * @example
+     * // Elemento que no existe
+     * const notFound = this.getAttributeValue('.nonexistent', 'id');
+     * // Resultado: null
+     */
+    getAttributeValue(selector, attribute) {
+        const elements = this.getElements(selector);
+        return elements.length ? elements.attr(attribute) : null;
+    }
+
+    /**
+     * Obtiene el texto limpio del primer elemento
+     * @param {Object} elements - Objeto jQuery/Cheerio con elementos
+     * @returns {string} - Texto limpio del primer elemento o cadena vacía si no hay elementos
+     * @requires cheerio - Para la extracción de texto
+     * @example
+     * // Obtener el texto limpio de un elemento
+     * const elements = this.$('p.description');
+     * const text = this.getCleanText(elements);
+     * // Para &lt;p class="description">  Texto con   espacios   &lt;/p>
+     * // Resultado: "Texto con espacios"
+     *
+     * @example
+     * // Colección vacía
+     * const empty = this.$('div.nonexistent');
+     * const text = this.getCleanText(empty);
+     * // Resultado: ""
+     */
+    getCleanText(elements) {
+        if (elements.length === 0) {
+            return '';
+        }
+        return elements.first().text().replace(/\s\s+/g, ' ').trim();
+    }
+
+    /**
+     * Obtiene el HTML del primer elemento
+     * @param {Object} elements - Objeto jQuery/Cheerio con elementos
+     * @returns {string} - HTML del primer elemento o cadena vacía si no hay elementos
+     * @requires cheerio - Para la extracción de HTML
+     * @example
+     * // Obtener el HTML interno de un elemento
+     * const elements = this.$('div.container');
+     * const html = this.getHtml(elements);
+     * // Para &lt;div class="container">&lt;span>Contenido&lt;/span>&lt;/div>
+     * // Resultado: "&lt;span>Contenido&lt;/span>"
+     *
+     * @example
+     * // Colección vacía
+     * const empty = this.$('div.nonexistent');
+     * const html = this.getHtml(empty);
+     * // Resultado: ""
+     */
+    getHtml(elements) {
+        if (elements.length === 0) {
+            return '';
+        }
+        return elements.first().html() || '';
+    }
+
+    /**
+     * Convierte elementos a un array
+     * @param {Object} elements - Objeto jQuery/Cheerio con elementos
+     * @returns {Array} - Array de elementos
+     * @requires cheerio - Para la manipulación de colecciones de elementos
+     * @example
+     * // Convertir colección de elementos a array
+     * const paragraphs = this.$('p');
+     * const arrayOfParagraphs = this.elementsToArray(paragraphs);
+     * // Para HTML con 3 párrafos
+     * // Resultado: [&lt;p>Párrafo 1&lt;/p>, &lt;p>Párrafo 2&lt;/p>, &lt;p>Párrafo 3&lt;/p>]
+     *
+     * @example
+     * // Colección vacía
+     * const empty = this.$('div.nonexistent');
+     * const emptyArray = this.elementsToArray(empty);
+     * // Resultado: []
+     */
+    elementsToArray(elements) {
+        return [...elements];
+    }
+}</code></pre>
         </article>
     </section>
 
