@@ -376,6 +376,27 @@ export class Validator {
      * //     'El valor de "codigo_postal" no cumple con la expresión regular /^\\d{5}$/'
      * //   ]
      * // }
+     *
+     * // Ejemplo de uso con código postal y coordenadas
+     * // no valido por longitud
+     * const objeto = {
+     *     codigo_postal: "123",     // Código postal no cumple la regex
+     *     latitud: 40.7128,         // Latitud válida
+     *     longitud: -74.0060        // Longitud válida
+     * };
+     * const esquema = {
+     *     codigo_postal: {required: true, type: "string", minlength: 5}, // Código postal de 5 dígitos
+     *     latitud: {required: true, type: "number", minlength: 50.25415}, // Latitud debe ser un número
+     *     longitud: {required: true, type: "number"} // Longitud debe ser un número
+     * };
+     * console.log(validateObject(objeto, esquema));
+     * // {
+     * //     valido: false,
+     * //         errores: [
+     * //     'El valor de "codigo_postal" no cumple con la con la longitud mínima de 5',
+     * //     'El valor de "latitud" no cumple con la con la longitud mínima de 50.25415'
+     * // ]
+     * // }
      */
     validateObject(obj, schema) {
         let errores = [];
@@ -383,7 +404,9 @@ export class Validator {
             const {
                 required = false,
                 type,
-                regex
+                regex,
+                minlength,
+                maxlength,
             } = schema[key];
             if (!(key in obj)) {
                 if (required) errores.push(`Falta la clave obligatoria: ${key}`);
@@ -397,6 +420,22 @@ export class Validator {
             // Validar regex
             if (regex &amp;&amp; typeof value === "string" &amp;&amp; !regex.test(value)) {
                 errores.push(`El valor de "${key}" no cumple con la expresión regular ${regex}`);
+            }
+            // Validar minlength "string"
+            if (minlength &amp;&amp; typeof value === "string" &amp;&amp; value.length &lt; minlength) {
+                errores.push(`El valor de "${key}" no cumple con la con la longitud mínima de ${minlength}`);
+            }
+            // Validar maxlength "string"
+            if (maxlength &amp;&amp; typeof value === "string" &amp;&amp; value.length > maxlength) {
+                errores.push(`El valor de "${key}" no cumple con la con la longitud máxima de ${maxlength}`);
+            }
+            // Validar minlength "number"
+            if (minlength &amp;&amp; typeof value === "number" &amp;&amp; value &lt; minlength) {
+                errores.push(`El valor de "${key}" no cumple con la con la longitud mínima de ${minlength}`);
+            }
+            // Validar maxlength "number"
+            if (maxlength &amp;&amp; typeof value === "number" &amp;&amp; value > maxlength) {
+                errores.push(`El valor de "${key}" no cumple con la con la longitud máxima de ${maxlength}`);
             }
         }
         return errores.length ? {valido: false, errores} : {valido: true};
