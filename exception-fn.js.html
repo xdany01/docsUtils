@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>numbers-fn.js - Documentation</title>
+    <title>exception-fn.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -37,7 +37,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">numbers-fn.js</h1>
+    <h1 class="page-title">exception-fn.js</h1>
     
 
     
@@ -47,198 +47,51 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @module Numbers
- */
+            <pre class="prettyprint source linenums"><code>
 /**
- * Trunca un número a un número determinado de decimales sin redondear.
- * @param {Number} n Numero a truncar
- * @param {Number} fixed Cantidad de decimales.
- * @returns {string} Retorna un string con el numero truncado.
- * @example
- * toFixed(25.198726354, 1);
- * // 25.1
- * toFixed(25.198726354, 2);
- * // 25.19
- * toFixed(25.198726354, 3);
- * // 25.198
- * toFixed(25.198726354, 4);
- * // 25.1987
- * toFixed(25.198726354, 5);
- * // 25.19872
- * toFixed(25.198726354, 6);
- * // 25.198726
+ * Clase base para excepciones personalizadas.
+ * Extiende de la clase Error para manejar errores con un código y opciones adicionales.
  */
-export function toFixed(n, fixed) {
-    return `${n}`.match(new RegExp(`^-?\\d+(?:\.\\d{0,${fixed}})?`))[0];
-}
+class Exception extends Error {
+    /**
+     * Crea una nueva excepción.
+     * @param {Object} params - Parámetros de la excepción.
+     * @param {string} params.mensaje - Mensaje de error (obligatorio).
+     * @param {string} [params.codigo=''] - Código de error opcional.
+     * @param {any} [params.option=null] - Información adicional sobre la excepción.
+     * @throws {Error} Si el mensaje no es proporcionado.
+     */
+    constructor({ mensaje, codigo = '', option = null }) {
+        if (!mensaje) {
+            throw new Error("El campo 'mensaje' es obligatorio");
+        }
 
-/**
- * Permite generar un número aleatorio multiplo de `range` dentro
- * del rango ajustado `min` y `max`.
- * @param {number} min Valor mínimo del rango de números.
- * @param {number} max Valor máximo del rango de números.
- * @param {number} range=100 Brecha entre los distintos múmeros que se desea como resultado.
- * @returns {number} Retorna un numero aleatorio multiplo de `range`.
- * @example
- * // Genera un número aleatorio entre 500 y 1000 en múltiplos de 50
- * const numeroAleatorio = randomNumberGenerator(500, 1000, 50);
- * console.log(numeroAleatorio);
- * // Puede imprimir, por ejemplo, 750 o 850.
- */
-export function randomNumberGenerator(min, max, range = 100) {
-    min = Math.ceil(min / range) * range;
-    max = Math.floor(max / range) * range;
-    return Math.floor(Math.random() * ((max - min) / range + 1)) * range + min;
-}
+        super(mensaje);
+        this.name = this.constructor.name;
+        this.codigo = codigo;
+        this.option = option;
 
-/**
- * Función para generar una secuencia de Fibonacci hasta el número n.
- * @param {number} n - Número hasta el cual se generará la secuencia de Fibonacci.
- * @returns {Array} - Secuencia de Fibonacci hasta el número n.
- * @example
- * console.log(fibonacci(6)); // [0, 1, 1, 2, 3, 5]
- */
-export function fibonacci(n) {
-    // Crear un array de longitud n y reducirlo para generar la secuencia de Fibonacci
-    return Array.from({length: n}).reduce(
-        (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
-        []
-    );
-}
-
-/**
- * Genera un array de números enteros aleatorios dentro de un rango dado.
- * @param {number} min - Valor mínimo del rango.
- * @param {number} max - Valor máximo del rango.
- * @param {number} n - Cantidad de números aleatorios a generar (por defecto es 1).
- * @returns {Array} - Array de números enteros aleatorios.
- * @example
- * console.log(randomIntArrayInRange(12, 35, 10));
- * // [ 34, 14, 27, 17, 30, 27, 20, 26, 21, 14 ]
- */
-export function randomIntArrayInRange(min, max, n = 1) {
-    // Crea un array con la longitud especificada y llena cada posición con un número aleatorio en el rango dado.
-    return Array.from(
-        {length: n},
-        () => Math.floor(Math.random() * (max - min + 1)) + min
-    );
-}
-
-/**
- * Función para calcular el máximo común divisor de múltiples números.
- * @param {...number} arr - Números de los cuales se calculará el máximo común divisor.
- * @returns {number} - El máximo común divisor de los números proporcionados.
- * @example
- * console.log(gcdMultiple(8, 36)) // 4
- * console.log(gcdMultiple(...[12, 8, 32])) // 4
- */
-export function gcdMultiple(...arr) {
-    return [...arr].reduce((a, b) => {
-        // Función recursiva para calcular el máximo común divisor de dos números.
-        const gcd = (a, b) => (!b ? a : gcd(b, a % b));
-        return gcd(a, b);
-    });
-}
-
-/**
- * Función para calcular el mínimo común múltiplo de múltiples números.
- * @param {...number} arr - Números de los cuales se calculará el mínimo común múltiplo.
- * @returns {number} El mínimo común múltiplo de los números proporcionados.
- * @example
- * console.log(lcmMultiple(12, 7)); // 84
- * console.log(lcmMultiple(...[1, 3, 4, 5])); // 60
- */
-export function lcmMultiple(...arr) {
-    // Reducir el array de números para calcular el mínimo común múltiplo
-    return [...arr].reduce((a, b) => {
-        // Función para calcular el máximo común divisor
-        const gcd = (a, b) => (!b ? a : gcd(b, a % b));
-        // Función para calcular el mínimo común múltiplo
-        const lcm = (x, y) => (x * y) / gcd(x, y);
-        // Retornar el mínimo común múltiplo de dos números
-        return lcm(a, b);
-    });
-}
-
-/**
- * Función que genera una progresión aritmética hasta un límite dado.
- * @param {number} n - El paso de la progresión aritmética.
- * @param {number} lim - El límite superior de la progresión aritmética.
- * @returns {Array} - Un array con la progresión aritmética generada.
- * @example
- * console.log(arithmeticProgression(5, 25)); // [5, 10, 15, 20, 25]
- */
-export function arithmeticProgression(n, lim) {
-    // Creamos un array con la longitud necesaria para cubrir el límite superior dado.
-    return Array.from({length: Math.ceil(lim / n)}, (_, i) => (i + 1) * n);
-}
-
-/**
- * Función que calcula una progresión geométrica.
- * @param {number} end - El valor final de la progresión.
- * @param {number} start - El valor inicial de la progresión (por defecto es 1).
- * @param {number} step - El paso de la progresión (por defecto es 2).
- * @returns {Array} - Un array con la progresión geométrica.
- * @example
- * console.log(geometricProgression(256)) // [1, 2, 4, 8, 16, 32, 64, 128, 256]
- * console.log(geometricProgression(256, 3)) // [3, 6, 12, 24, 48, 96, 192]
- * console.log(geometricProgression(256, 1, 4)) // [1, 4, 16, 64, 256]
- */
-export function geometricProgression(end, start = 1, step = 2) {
-    // Calcula la longitud del array basado en la fórmula de la progresión geométrica.
-    return Array.from({
-        length: Math.floor(Math.log(end / start) / Math.log(step)) + 1,
-    }).map((_, i) => start * step ** i); // Genera cada elemento de la progresión.
-}
-
-/**
- * Función recursiva para calcular el factorial de un número.
- * @param {number} n - Número del cual se calculará el factorial.
- * @returns {number} - El factorial de n.
- * @example
- * console.log(factorial(6)); // Imprime el factorial de 6: 720
- */
-export function factorial(n) {
-    // Comprueba si el número es negativo
-    return n &lt; 0
-        ? (() => {
-            throw new TypeError('¡Los números negativos no están permitidos!');
-        })()
-        // Comprueba si el número es 0 o 1
-        : n &lt;= 1
-            ? 1
-            // Calcula el factorial recursivamente
-            : n * factorial(n - 1);
-}
-
-/**
- * Función que calcula el logaritmo en base b de n.
- * @param {number} b - Base del logaritmo.
- * @param {number} n - Número del cual se calcula el logaritmo.
- * @returns {number} - Resultado del logaritmo en base b de n.
- * @example
- * console.log(logBase(5, 25)); // Muestra el resultado del logaritmo en base 5 de 25, que debería ser 2.
- * console.log(logBase(5, 625)); // Muestra el resultado del logaritmo en base 5 de 625, que debería ser 4.
- */
-export function logBase(b, n) {
-    return Math.log(n) / Math.log(b); // Calcula el logaritmo en base b de n utilizando la fórmula de cambio de base.
-}
-
-/**
- * Redondea un número a una cantidad específica de decimales.
- * @param {number} numero - El número que se desea redondear.
- * @param {number} decimales - La cantidad de decimales a los que se redondeará el número.
- * @returns {number} - El número redondeado.
- * @throws {Error} - Lanza un error si el valor proporcionado no es un número válido.
- */
-export function roundNumber(numero, decimales) {
-    const num = parseFloat(numero); // Convierte el valor de 'numero' a un número de punto flotante.
-    if (isNaN(num)) { // Verifica si 'num' es NaN (no es un número).
-        throw new Error("El valor proporcionado no es un número válido."); // Lanza un error si 'num' no es un número.
+        if (Error.captureStackTrace) {
+            Error.captureStackTrace(this, this.constructor);
+        }
     }
-    const factor = Math.pow(10, decimales); // Calcula el factor de multiplicación basado en la cantidad de decimales.
-    return Math.round(num * factor) / factor; // Redondea el número y lo divide por el factor para obtener el resultado final.
+}
+
+/**
+ * Excepción específica para errores relacionados con HTTP.
+ * Extiende de Exception para incluir errores de cliente HTTP.
+ */
+class HttpClientException extends Exception {
+    /**
+     * Crea una nueva excepción de cliente HTTP.
+     * @param {Object} params - Parámetros de la excepción.
+     * @param {string} params.mensaje - Mensaje de error (obligatorio).
+     * @param {string} [params.codigo=''] - Código de error opcional.
+     * @param {any} [params.option=null] - Información adicional sobre la excepción.
+     */
+    constructor({ mensaje, codigo = '', option = null }) {
+        super({ mensaje, codigo, option });
+    }
 }
 </code></pre>
         </article>
