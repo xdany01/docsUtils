@@ -56,19 +56,19 @@ class Exception extends Error {
     /**
      * Crea una nueva excepción.
      * @param {Object} params - Parámetros de la excepción.
-     * @param {string} params.mensaje - Mensaje de error (obligatorio).
-     * @param {string} [params.codigo=''] - Código de error opcional.
+     * @param {string} params.message - Mensaje de error (obligatorio).
+     * @param {string} [params.code=''] - Código de error opcional.
      * @param {any} [params.option=null] - Información adicional sobre la excepción.
-     * @throws {Error} Si el mensaje no es proporcionado.
+     * @throws {Error} Si el message no es proporcionado.
      */
-    constructor({ mensaje, codigo = '', option = null }) {
-        if (!mensaje) {
-            throw new Error("El campo 'mensaje' es obligatorio");
+    constructor({ message, code = '', option = null }) {
+        if (!message) {
+            throw new Error("El campo 'message' es obligatorio");
         }
 
-        super(mensaje);
+        super(message);
         this.name = this.constructor.name;
-        this.codigo = codigo;
+        this.code = code;
         this.option = option;
 
         if (Error.captureStackTrace) {
@@ -85,12 +85,12 @@ class HttpClientException extends Exception {
     /**
      * Crea una nueva excepción de cliente HTTP.
      * @param {Object} params - Parámetros de la excepción.
-     * @param {string} params.mensaje - Mensaje de error (obligatorio).
-     * @param {string} [params.codigo=''] - Código de error opcional.
+     * @param {string} params.message - Mensaje de error (obligatorio).
+     * @param {string} [params.code=''] - Código de error opcional.
      * @param {any} [params.option=null] - Información adicional sobre la excepción.
      */
-    constructor({ mensaje, codigo = '', option = null }) {
-        super({ mensaje, codigo, option });
+    constructor({ message, code = '', option = null }) {
+        super({ message, code, option });
     }
 }
 </code></pre>

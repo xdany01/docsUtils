@@ -64,10 +64,10 @@ class Logger {
      */
     static log(type, { message, error = '', attempt = 0, retries = 0, url = '' }) {
         const colors = {
-            warning: 'Orange',
-            error: 'Tomato',
-            info: 'DodgerBlue',
-            success: 'MediumSeaGreen'
+            warning: 'orange',
+            error: 'tomato',
+            info: 'dodgerblue',
+            success: 'mediumseagreen'
         };
 
         const color = colors[type] || 'Black';
