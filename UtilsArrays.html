@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Validator - Documentation</title>
+    <title>UtilsArrays - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -37,7 +37,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Validator</h1>
+    <h1 class="page-title">UtilsArrays</h1>
     
 
     
@@ -51,11 +51,11 @@
     
         <h2>
         
-            Validator
+            UtilsArrays
         
         </h2>
         
-            <div class="class-description usertext"><p>Clase Validator que proporciona métodos estáticos para validar tipos de datos.</p></div>
+            <div class="class-description usertext"><p>Clase UtilsArrays que proporciona métodos estáticos para manejo de arrays.</p></div>
         
     
 </header>
@@ -70,7 +70,7 @@
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="Validator"><span class="type-signature"></span>new Validator<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="UtilsArrays"><span class="type-signature"></span>new UtilsArrays<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
@@ -83,7 +83,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line4">line 4</a>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line4">line 4</a>
     </li></ul>
     </dd>
     
@@ -174,7 +174,7 @@
 
     
 
-    <h4 class="name" id="validateObject"><span class="type-signature"></span>validateObject<span class="signature">(obj, schema)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id=".accumulate"><span class="type-signature type-signature-static">(static) </span>accumulate<span class="signature">(arr)</span><span class="type-signature"> &rarr; {Array.&lt;Number>}</span></h4>
 
     
 
@@ -184,13 +184,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Valida un objeto según un esquema de validación.</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite crear una matriz de suma acumulativa.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line352">line 352</a>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line148">line 148</a>
     </li></ul>
     </dd>
     
@@ -238,7 +238,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>// Ejemplo de uso con código postal y coordenadasconst objeto = {    codigo_postal: "12345",   // Código postal válido    latitud: 40.7128,         // Latitud válida    longitud: -74.0060        // Longitud válida};const esquema = {    codigo_postal: {required: true, type: "string", regex: /^\d{5}$/}, // Código postal de 5 dígitos    latitud: {required: true, type: "number"}, // Latitud debe ser un número    longitud: {required: true, type: "number"} // Longitud debe ser un número};console.log(validateObject(objeto, esquema));// { valido: true }// Ejemplo de uso con código postal y coordenadas// no valido por campo requeridoconst objeto = {    codigo_postal: "12345",   // Código postal válido    latitud: 40.7128,         // Latitud válida    // longitud: -74.0060        // Longitud omitida};const esquema = {    codigo_postal: {required: true, type: "string", regex: /^\d{5}$/}, // Código postal de 5 dígitos    latitud: {required: true, type: "number"}, // Latitud debe ser un número    longitud: {required: true, type: "number"} // Longitud debe ser un número};console.log(validateObject(objeto, esquema));// { valido: false, errores: [ 'Falta la clave obligatoria: longitud' ] }// Ejemplo de uso con código postal y coordenadas// no valido por regexconst objeto = {    codigo_postal: "123",   // Código postal no cumple la regex    latitud: 40.7128,         // Latitud válida    longitud: -74.0060        // Longitud válida};const esquema = {    codigo_postal: {required: true, type: "string", regex: /^\d{5}$/}, // Código postal de 5 dígitos    latitud: {required: true, type: "number"}, // Latitud debe ser un número    longitud: {required: true, type: "number"} // Longitud debe ser un número};console.log(validateObject(objeto, esquema));// {//   valido: false,//   errores: [//     'El valor de "codigo_postal" no cumple con la expresión regular /^\\d{5}$/'//   ]// }// Ejemplo de uso con código postal y coordenadas// no valido por longitudconst objeto = {    codigo_postal: "123",     // Código postal no cumple la regex    latitud: 40.7128,         // Latitud válida    longitud: -74.0060        // Longitud válida};const esquema = {    codigo_postal: {required: true, type: "string", minlength: 5}, // Código postal de 5 dígitos    latitud: {required: true, type: "number", minlength: 50.25415}, // Latitud debe ser un número    longitud: {required: true, type: "number"} // Longitud debe ser un número};console.log(validateObject(objeto, esquema));// {//     valido: false,//         errores: [//     'El valor de "codigo_postal" no cumple con la con la longitud mínima de 5',//     'El valor de "latitud" no cumple con la con la longitud mínima de 50.25415'// ]// }</code></pre>
+    <pre class="prettyprint"><code>accumulate([1, 2, 3, 4]);// [1, 3, 6, 10]// 1             = 1// 1 + 2         = 3// 1 + 2 + 3     = 6// 1 + 2 + 3 + 4 = 10</code></pre>
 
 
 
@@ -268,13 +268,13 @@
 
         <tr>
             
-                <td class="name"><code>obj</code></td>
+                <td class="name"><code>arr</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">Array.&lt;Number></span>
 
 
 
@@ -285,31 +285,7 @@
 
             
 
-            <td class="description last"><p>Objeto a validar.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>schema</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Esquema de validación.</p></td>
+            <td class="description last"><p>Matriz de números base.</p></td>
         </tr>
 
     
@@ -335,9 +311,559 @@
 
         
 <div class="param-desc">
-    <ul>
-<li>Resultado de la validación con errores (si los hay).</li>
-</ul>
+    <p>Retorna una matriz con los valores calculados.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Number></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".average"><span class="type-signature type-signature-static">(static) </span>average<span class="signature">(arr)</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite obtener el promedio de una matriz de números.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line119">line 119</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>average([1,2,3,4]);//2.5</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Matriz de números.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Retorna el promedio de los números de la matriz.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".chunk"><span class="type-signature type-signature-static">(static) </span>chunk<span class="signature">(arr, size)</span><span class="type-signature"> &rarr; {Array.&lt;any>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite dividir una matriz en trozos.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line40">line 40</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>chunk([1, 2, 3, 4, 5, 6, 7, 8], 3);// [[1, 2, 3], [4, 5, 6], [7, 8]]chunk([1, 2, 3, 4, 5, 6, 7, 8], 4);// [[1, 2, 3, 4], [5, 6, 7, 8]]</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Es la matriz con la que se desea trabajar.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>size</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Es el tamaño de los trozos en los cuales se desea dividir la matriz.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Retorna una matriz compuesta por los trozos especificados.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;any></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".countOccurrences"><span class="type-signature type-signature-static">(static) </span>countOccurrences<span class="signature">(arr, val)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite cuentar las apariciones de elementos en una matriz unidimensional.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line103">line 103</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>countOccurrences([2, 1, 3, 3, 2, 3]);// { '1': 1, '2': 2, '3': 3 }countOccurrences(['a', 'b', 'a', 'c', 'a', 'b']);// { 'a': 3, 'b': 2, 'c': 1 }// Usando el parametro valcountOccurrences([2, 1, 3, 3, 2, 3], 2);// 2countOccurrences(['a', 'b', 'a', 'c', 'a', 'b'], 'a');// 3</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Matriz unidimensional en la que se desea operar.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Valor opcional por el cual se desea contar las apariciones.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Retorna un objeto con las apariciones y su cantidad.</p>
 </div>
 
 
@@ -364,7 +890,7 @@
 
     
 
-    <h4 class="name" id=".areArraySame"><span class="type-signature type-signature-static">(static) </span>areArraySame<span class="signature">(arr1, arr2)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id=".firstIndex"><span class="type-signature type-signature-static">(static) </span>firstIndex<span class="signature">(arr, predicate)</span><span class="type-signature"> &rarr; {Number}</span></h4>
 
     
 
@@ -374,13 +900,14 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Permite comparar si dos matrices unidimensionales son iguales.</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Encuentre el índice del primer elemento coincidente en una matriz
+unidimensional de acuerdo al predicado indicado.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line248">line 248</a>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line165">line 165</a>
     </li></ul>
     </dd>
     
@@ -428,7 +955,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>Validator.areArraySame([1,2,3,4],[1,2,3,4]) // true</code></pre>
+    <pre class="prettyprint"><code>lastIndex([1, 3, 5, 7, 9, 2, 4, 6, 8], (i) => i % 2 === 0);// 5lastIndex([1, 3, 5, 7, 9, 8, 6, 4, 2], (i) => i > 6);// 3</code></pre>
 
 
 
@@ -458,7 +985,7 @@
 
         <tr>
             
-                <td class="name"><code>arr1</code></td>
+                <td class="name"><code>arr</code></td>
             
 
             <td class="type">
@@ -475,7 +1002,405 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Matriz unidimensional en la cual se desea realizar la busqueda.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>predicate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">static</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback que debe retornar un <code>bool</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Retorna el índice del primer elemento que cumple
+con el predicado indicado.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".firstObjMatch"><span class="type-signature type-signature-static">(static) </span>firstObjMatch<span class="signature">(arr, txt)</span><span class="type-signature"> &rarr; {Object|undefined}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Este método busca el primer objeto en un array que
+cumpla con una condición de coincidencia de expresiones regulares
+con un texto dado.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line319">line 319</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const promotions = [    {name: 'promotion 1', regex: new RegExp(/\$,\d/)},    {name: 'promotion 2', regex: new RegExp(/\$\.\d/)},    {name: 'promotion 3', regex: new RegExp(/\d/)},    {name: 'promotion 4', regex: new RegExp(/\$\d/)}];console.log(firstObjMatch(promotions, '$25'));//{ name: 'promotion 4', regex: reg4 }</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array de objetos de promociones con su respectiva regex.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Texto a machear.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Retorna el objeto si hay coincidencia o undefined si no la hay.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".generateObjectArray"><span class="type-signature type-signature-static">(static) </span>generateObjectArray<span class="signature">(arr1, arr2, keys<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Función para generar un array de objetos a partir de dos arrays dados.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line382">line 382</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>// Ejemplo de usoconst arr1 = ['a', 'b', 'c'];const arr2 = [1, 2, 3];const keys = ['key', 'value'];const result = generateObjectArray(arr1, arr2, keys);console.log(result);[  { key: 'a', value: 1 },  { key: 'b', value: 2 },  { key: 'c', value: 3 }]</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>El primer array.</p></td>
         </tr>
 
     
@@ -488,6 +1413,432 @@
             <td class="type">
             
                 
+<span class="param-type">Array</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>El segundo array.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>keys</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>['key','value']</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Las claves para los objetos en el array resultante.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Un array de objetos con las claves especificadas.</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getIntersection"><span class="type-signature type-signature-static">(static) </span>getIntersection<span class="signature">(a, &hellip;arr)</span><span class="type-signature"> &rarr; {Array.&lt;any>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite obtener la intersección de matrices.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line68">line 68</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>getIntersection([1, 2, 3], [2, 3, 4, 5]);// [2, 3]getIntersection([1, 2, 3], [2, 3, 4, 5], [1, 3, 5]);// [3]</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Matriz principal de comparación.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Sucesión de matrices para comparar.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Retorna un matriz con las coincidencias.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;any></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".indexOfMax"><span class="type-signature type-signature-static">(static) </span>indexOfMax<span class="signature">(arr)</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Encuentra el índice del elemento máximo de una matriz.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line210">line 210</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>indexOfMax([6, 4, 8, 2, 10]);// 4indexOfMax([6, 4, 2, 10, 10]);// 3</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
 <span class="param-type">Array.&lt;any></span>
 
 
@@ -499,7 +1850,784 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Matriz de la cual se desea conseguir el índice del elemento máximo.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Retorna el índice del elemento correspondiente al máximo valor.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".indexOfMin"><span class="type-signature type-signature-static">(static) </span>indexOfMin<span class="signature">(arr)</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Encuentra el índice del elemento mínimo de una matriz.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line196">line 196</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>indexOfMin([6, 4, 8, 2, 10]);// 3indexOfMin([6, 4, 2, 2, 10]);// 2</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Matriz de la cual se desea conseguir el índice del elemento mínimo.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Retorna el índice del elemento correspondiente al mínimo valor.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".indices"><span class="type-signature type-signature-static">(static) </span>indices<span class="signature">(arr, value)</span><span class="type-signature"> &rarr; {Array.&lt;Number>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite obtener los índices de un valor buscado en una matriz unidimensional.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line262">line 262</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>indices(['h', 'e', 'l', 'l', 'o'], 'l');// [2, 3]indices(['h', 'e', 'l', 'l', 'o'], 'w');// []</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Matriz unidimensional que es el origen de datos.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Valor que se busca en la matriz unidimensional.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Retorna un array con los índices de las coincidencias encontradas.
+Si no encuentra ninguna coincidencia retorna un array vacio.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Number></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".insertElements"><span class="type-signature type-signature-static">(static) </span>insertElements<span class="signature">(arr, index, &hellip;elements)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Inserta uno o más elementos en un array en un índice dado sin reemplazar ningún elemento.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line348">line 348</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>// Ejemplo de uso con objetos:let arr = [    {id: 1, name: 'a'},    {id: 2, name: 'b'},    {id: 5, name: 'e'}];insertElements(arr, 2, {id: 3, name: 'c'}, {id: 4, name: 'd'},);// Resultado:// [//     { id: 1, name: 'a' },//     { id: 2, name: 'b' },//     { id: 3, name: 'c' },//     { id: 4, name: 'd' },//     { id: 5, name: 'e' }// ]</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El array original donde se insertarán los elementos.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>El índice a partir del cual se insertarán los elementos.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>elements</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">any</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Los elementos a insertar en el array.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>El array con los elementos insertados.</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isEqualArray"><span class="type-signature type-signature-static">(static) </span>isEqualArray<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite comparar dos matrices.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line83">line 83</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>isEqualArray([1, 2, 3], [1, 2, 3]);// trueisEqualArray([1, 2, 3], [1, '2', 3]);// false</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Matriz a comparar.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Matriz a comparar.</p></td>
         </tr>
 
     
@@ -552,7 +2680,7 @@
 
     
 
-    <h4 class="name" id=".indexInRange"><span class="type-signature type-signature-static">(static) </span>indexInRange<span class="signature">(index, arr)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id=".lastIndex"><span class="type-signature type-signature-static">(static) </span>lastIndex<span class="signature">(arr, predicate)</span><span class="type-signature"> &rarr; {Number}</span></h4>
 
     
 
@@ -562,13 +2690,387 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica que el indice se encuentre dentro de los valores permitidos para la matriz suministrada.</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Encuentre el índice del último elemento coincidente en una matriz
+unidimensional de acuerdo al predicado indicado.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line217">line 217</a>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line182">line 182</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>lastIndex([1, 3, 5, 7, 9, 2, 4, 6, 8], (i) => i % 2 === 1);// 4lastIndex([1, 3, 5, 7, 9, 8, 6, 4, 2], (i) => i > 6);// 5</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Matriz unidimensional en la cual se desea realizar la busqueda.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>predicate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">static</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback que debe retornar un <code>bool</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Retorna el índice del último elemento que cumple
+con el predicado indicado.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".partition"><span class="type-signature type-signature-static">(static) </span>partition<span class="signature">(arr, criteria)</span><span class="type-signature"> &rarr; {Array.&lt;any>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite particionar una matriz según una condición.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line53">line 53</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>partition([1, 2, 3, 4, 5], (n) => n % 2 === 0);// [ [ 2, 4 ], [ 1, 3, 5 ] ]</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Es la matriz con la que se desea trabajar.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>criteria</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">static</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Predicado que evalua cada elemento.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;any></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".randomItem"><span class="type-signature type-signature-static">(static) </span>randomItem<span class="signature">(arr)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite obtener un elemento aleatorio de una matriz.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line245">line 245</a>
     </li></ul>
     </dd>
     
@@ -641,7 +3143,167 @@
 
         <tr>
             
-                <td class="name"><code>index</code></td>
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;any></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Matriz base</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".range"><span class="type-signature type-signature-static">(static) </span>range<span class="signature">(min, max)</span><span class="type-signature"> &rarr; {Array.&lt;Number>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite crear una matriz de números en el rango dado.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line132">line 132</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>range(5, 10);// [5, 6, 7, 8, 9, 10]</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>min</code></td>
             
 
             <td class="type">
@@ -658,20 +3320,20 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Mínimo valor de la matriz.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>arr</code></td>
+                <td class="name"><code>max</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Array.&lt;any></span>
+<span class="param-type">Number</span>
 
 
 
@@ -682,7 +3344,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Máximo valor de la matriz.</p></td>
         </tr>
 
     
@@ -708,7 +3370,7 @@
 
         
 <div class="param-desc">
-    <p>Retorna <code>true</code> si esta dentro del rango y <code>false</code> si no lo esta.</p>
+    <p>Retorna una matriz de números consecutivos segun el min y el max indicado.</p>
 </div>
 
 
@@ -719,7 +3381,7 @@
     </dt>
     <dd>
         
-<span class="param-type">boolean</span>
+<span class="param-type">Array.&lt;Number></span>
 
 
 
@@ -735,7 +3397,7 @@
 
     
 
-    <h4 class="name" id=".isArray"><span class="type-signature type-signature-static">(static) </span>isArray<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id=".removeDuplicate"><span class="type-signature type-signature-static">(static) </span>removeDuplicate<span class="signature">(arr)</span><span class="type-signature"> &rarr; {Array.&lt;any>}</span></h4>
 
     
 
@@ -745,13 +3407,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es un array.</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite eliminar valores duplicados en una matriz unidimensional.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line89">line 89</a>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line236">line 236</a>
     </li></ul>
     </dd>
     
@@ -799,2031 +3461,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>Validator.isArray([]); // true</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">any</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>El valor a verificar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es un array, de lo contrario false.</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isBigInt"><span class="type-signature type-signature-static">(static) </span>isBigInt<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es un BigInt.</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line111">line 111</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Example</h5>
-    
-    <pre class="prettyprint"><code>Validator.isBigInt(42n); // true</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">any</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>El valor a verificar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es un BigInt, de lo contrario false.</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isBoolean"><span class="type-signature type-signature-static">(static) </span>isBoolean<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es un booleano.</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line56">line 56</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Example</h5>
-    
-    <pre class="prettyprint"><code>Validator.isBoolean(false); // true</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">any</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>El valor a verificar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es un booleano, de lo contrario false.</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isEmpty"><span class="type-signature type-signature-static">(static) </span>isEmpty<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor está vacío.</p>
-<p>Un valor se considera vacío si:</p>
-<ul>
-<li>Es una cadena de texto y está vacía después de eliminar espacios en blanco.</li>
-<li>Es un array y no tiene elementos.</li>
-<li>Es un objeto y no tiene propiedades propias.</li>
-<li>Es un número (incluyendo float, bigint e integer) y es igual a 0.</li>
-</ul></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line172">line 172</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Example</h5>
-    
-    <pre class="prettyprint"><code>console.log(Validator.isEmpty("   "));   // true (cadena vacía)console.log(Validator.isEmpty([]));      // true (array vacío)console.log(Validator.isEmpty({}));      // true (objeto vacío)console.log(Validator.isEmpty(0));       // true (número 0)console.log(Validator.isEmpty(3.14));    // false (número distinto de 0)console.log(Validator.isEmpty("Hello")); // false (cadena con contenido)console.log(Validator.isEmpty([1, 2]));  // false (array con elementos)console.log(Validator.isEmpty({ a: 1 })); // false (objeto con propiedades)</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>El valor a evaluar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <p><code>true</code> si el valor está vacío, <code>false</code> en caso contrario.</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isEncoded"><span class="type-signature type-signature-static">(static) </span>isEncoded<span class="signature">(str)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si una cadena está codificada en formato URI.</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line259">line 259</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>str</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>La cadena a verificar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-throws">Throws:</h5>
-
-        
-
-<dl>
-    <dt>
-        <div class="param-desc usertext">
-        <ul>
-<li>Lanza un error si el argumento no es un string.</li>
-</ul>
-        </div>
-    </dt>
-    <dd></dd>
-    <dt>
-        <dl class="param-type">
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">Error</span>
-
-
-
-            </dd>
-        </dl>
-    </dt>
-    <dd></dd>
-</dl>
-
-
-    
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Retorna true si la cadena está codificada, false en caso contrario.</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isFloat"><span class="type-signature type-signature-static">(static) </span>isFloat<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es un número de punto flotante.</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line45">line 45</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Example</h5>
-    
-    <pre class="prettyprint"><code>Validator.isFloat(3.14); // true</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">any</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>El valor a verificar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es un número de punto flotante, de lo contrario false.</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isFunction"><span class="type-signature type-signature-static">(static) </span>isFunction<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es una función.</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line67">line 67</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Example</h5>
-    
-    <pre class="prettyprint"><code>Validator.isFunction(() => {}); // true</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">any</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>El valor a verificar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es una función, de lo contrario false.</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isInteger"><span class="type-signature type-signature-static">(static) </span>isInteger<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es un entero.</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line34">line 34</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Example</h5>
-    
-    <pre class="prettyprint"><code>Validator.isInteger(42); // true</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">any</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>El valor a verificar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es un entero, de lo contrario false.</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isNil"><span class="type-signature type-signature-static">(static) </span>isNil<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es null o undefined.</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line146">line 146</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Example</h5>
-    
-    <pre class="prettyprint"><code>Validator.isNil(null); // trueValidator.isNil(undefined); // trueValidator.isNil(''); // false</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">any</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>El valor a verificar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es null o undefined, de lo contrario false.</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isNull"><span class="type-signature type-signature-static">(static) </span>isNull<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es null.</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line122">line 122</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Example</h5>
-    
-    <pre class="prettyprint"><code>Validator.isNull(null) // true</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">any</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>El valor a verificar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es null, de lo contrario false.</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isNumber"><span class="type-signature type-signature-static">(static) </span>isNumber<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es un número.</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line23">line 23</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Example</h5>
-    
-    <pre class="prettyprint"><code>Validator.isNumber(42); // true</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">any</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>El valor a verificar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es un número, de lo contrario false.</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isObject"><span class="type-signature type-signature-static">(static) </span>isObject<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es un objeto (pero no un array o null).</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line78">line 78</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Example</h5>
-    
-    <pre class="prettyprint"><code>Validator.isObject({}); // true</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">any</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>El valor a verificar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es un objeto, de lo contrario false.</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isOneDimensional"><span class="type-signature type-signature-static">(static) </span>isOneDimensional<span class="signature">(arr)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Permite determinar si la matriz es unidimensional (es decir, contiene elementos directamente y no otras matrices).</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line229">line 229</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Example</h5>
-    
-    <pre class="prettyprint"><code>Validator.isOneDimensionalMatrix([1, 2, 3, 4, 5]); // trueValidator.isOneDimensionalMatrix([[1, 2, 3], [4, 5, 6]]); // false</code></pre>
+    <pre class="prettyprint"><code>removeDuplicate([1, 1, 2, 3, 4, 5, 1, 3, 6])// [ 2, 4, 5, 6 ]</code></pre>
 
 
 
@@ -2870,7 +3508,7 @@
 
             
 
-            <td class="description last"><p>Matriz que se desea verificar.</p></td>
+            <td class="description last"><p>Matriz a la cual se le desea remover los elementos duplicados.</p></td>
         </tr>
 
     
@@ -2895,10 +3533,6 @@
 <h5 class="h5-returns">Returns:</h5>
 
         
-<div class="param-desc">
-    <p>Retorna <code>true</code> si es unidimensional y <code>false</code> si no lo es.</p>
-</div>
-
 
 
 <dl class="param-type">
@@ -2907,7 +3541,7 @@
     </dt>
     <dd>
         
-<span class="param-type">boolean</span>
+<span class="param-type">Array.&lt;any></span>
 
 
 
@@ -2923,7 +3557,7 @@
 
     
 
-    <h4 class="name" id=".isString"><span class="type-signature type-signature-static">(static) </span>isString<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id=".removeDuplicatesArrObj"><span class="type-signature type-signature-static">(static) </span>removeDuplicatesArrObj<span class="signature">(arr)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
 
     
 
@@ -2933,13 +3567,16 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es un string.</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Esta función se utiliza para eliminar elementos duplicados de un array de objetos.
+Funciona convirtiendo cada objeto en una cadena JSON y utilizando un Set para
+almacenar solo las cadenas únicas, luego convierte esas cadenas nuevamente en
+objetos antes de devolver el array resultante sin duplicados.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line12">line 12</a>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line293">line 293</a>
     </li></ul>
     </dd>
     
@@ -2987,7 +3624,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>Validator.isString("Hola"); // true</code></pre>
+    <pre class="prettyprint"><code>// Definir un array con objetos que pueden tener duplicadosconst arrayConDuplicados = [  { id: 1, name: 'John' },  { id: 2, name: 'Jane' },  { id: 1, name: 'John' }, // Duplicado  { id: 3, name: 'Doe' },  { id: 2, name: 'Jane' }, // Duplicado];// Llamar a la función para eliminar duplicadosconst arraySinDuplicados = removeDuplicatesArrObj(arrayConDuplicados);console.log(arraySinDuplicados);// [//  { id: 1, name: 'John' },//  { id: 2, name: 'Jane' },//  { id: 3, name: 'Doe' }// ]</code></pre>
 
 
 
@@ -3017,13 +3654,13 @@
 
         <tr>
             
-                <td class="name"><code>value</code></td>
+                <td class="name"><code>arr</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">any</span>
+<span class="param-type">Array.&lt;Object></span>
 
 
 
@@ -3034,7 +3671,7 @@
 
             
 
-            <td class="description last"><p>El valor a verificar.</p></td>
+            <td class="description last"><p>Matriz de objetos con elementos duplicados.</p></td>
         </tr>
 
     
@@ -3060,9 +3697,7 @@
 
         
 <div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es un string, de lo contrario false.</li>
-</ul>
+    <p>Retorna una matriz de objetos sin duplicados.</p>
 </div>
 
 
@@ -3073,7 +3708,7 @@
     </dt>
     <dd>
         
-<span class="param-type">boolean</span>
+<span class="param-type">Array.&lt;Object></span>
 
 
 
@@ -3089,7 +3724,7 @@
 
     
 
-    <h4 class="name" id=".isSymbol"><span class="type-signature type-signature-static">(static) </span>isSymbol<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id=".shuffle"><span class="type-signature type-signature-static">(static) </span>shuffle<span class="signature">(arr)</span><span class="type-signature"> &rarr; {Array.&lt;any>}</span></h4>
 
     
 
@@ -3099,13 +3734,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es un símbolo.</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite mezclar los valores de una matriz unidimensional.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line100">line 100</a>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line16">line 16</a>
     </li></ul>
     </dd>
     
@@ -3153,7 +3788,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>Validator.isSymbol(Symbol()); // true</code></pre>
+    <pre class="prettyprint"><code>shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);// [9, 1, 10, 6, 8, 5, 2, 3, 7, 4]shuffle(['a','b','c','d','e','f','g','h']);//['b', 'e', 'f', 'h', 'a', 'c', 'g', 'd']</code></pre>
 
 
 
@@ -3183,13 +3818,13 @@
 
         <tr>
             
-                <td class="name"><code>value</code></td>
+                <td class="name"><code>arr</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">any</span>
+<span class="param-type">Array.&lt;any></span>
 
 
 
@@ -3200,7 +3835,7 @@
 
             
 
-            <td class="description last"><p>El valor a verificar.</p></td>
+            <td class="description last"><p>Matriz unidimensional la cual se desea mezclar.</p></td>
         </tr>
 
     
@@ -3226,9 +3861,7 @@
 
         
 <div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es un símbolo, de lo contrario false.</li>
-</ul>
+    <p>Retorna una matriz con los valores mezclados.</p>
 </div>
 
 
@@ -3239,7 +3872,7 @@
     </dt>
     <dd>
         
-<span class="param-type">boolean</span>
+<span class="param-type">Array.&lt;any></span>
 
 
 
@@ -3255,7 +3888,7 @@
 
     
 
-    <h4 class="name" id=".isType"><span class="type-signature type-signature-static">(static) </span>isType<span class="signature">(value, type)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id=".sortElementsByArrayOfText"><span class="type-signature type-signature-static">(static) </span>sortElementsByArrayOfText<span class="signature">(elements, arrayText, property)</span><span class="type-signature"> &rarr; {Array}</span></h4>
 
     
 
@@ -3265,13 +3898,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si la variable es del tipo indicado.</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Función que ordena elementos basándose en un arreglo de texto.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line194">line 194</a>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line443">line 443</a>
     </li></ul>
     </dd>
     
@@ -3344,13 +3977,13 @@
 
         <tr>
             
-                <td class="name"><code>value</code></td>
+                <td class="name"><code>elements</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">*</span>
+<span class="param-type">Array</span>
 
 
 
@@ -3361,14 +3994,38 @@
 
             
 
-            <td class="description last"><p>Variable a testear.</p></td>
+            <td class="description last"><p>Arreglo de elementos a ordenar.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>arrayText</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Arreglo de texto que define el orden.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>property</code></td>
             
 
             <td class="type">
@@ -3385,7 +4042,7 @@
 
             
 
-            <td class="description last"><p>Tipo de dato en formato string.</p></td>
+            <td class="description last"><p>Propiedad del elemento que se utilizará para la comparación.</p></td>
         </tr>
 
     
@@ -3411,7 +4068,9 @@
 
         
 <div class="param-desc">
-    <p>Retorna <code>true</code> si es del tipo indicado y <code>false</code> si no es.</p>
+    <ul>
+<li>Arreglo de elementos ordenados según el arreglo de texto.</li>
+</ul>
 </div>
 
 
@@ -3422,7 +4081,7 @@
     </dt>
     <dd>
         
-<span class="param-type">boolean</span>
+<span class="param-type">Array</span>
 
 
 
@@ -3438,7 +4097,7 @@
 
     
 
-    <h4 class="name" id=".isUndefined"><span class="type-signature type-signature-static">(static) </span>isUndefined<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id=".swapItems"><span class="type-signature type-signature-static">(static) </span>swapItems<span class="signature">(arr, destination, source)</span><span class="type-signature"> &rarr; {Array.&lt;any>}</span></h4>
 
     
 
@@ -3448,13 +4107,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor es undefined.</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite intercambiar la posición dos elementos de la matriz suministrada.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line133">line 133</a>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line224">line 224</a>
     </li></ul>
     </dd>
     
@@ -3502,7 +4161,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>Validator.isUndefined(undefined); // true</code></pre>
+    <pre class="prettyprint"><code>swapItems([1, 2, 3, 4, 5], 1, 4);// [1, 5, 3, 4, 2]</code></pre>
 
 
 
@@ -3532,13 +4191,13 @@
 
         <tr>
             
-                <td class="name"><code>value</code></td>
+                <td class="name"><code>arr</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">any</span>
+<span class="param-type">Array.&lt;any></span>
 
 
 
@@ -3549,7 +4208,55 @@
 
             
 
-            <td class="description last"><p>El valor a verificar.</p></td>
+            <td class="description last"><p>Matriz de la cual se desea intercambiar elementos.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>destination</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Índice del elemento de destinación.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Índice del elemento de origen.</p></td>
         </tr>
 
     
@@ -3575,9 +4282,7 @@
 
         
 <div class="param-desc">
-    <ul>
-<li>Retorna true si el valor es undefined, de lo contrario false.</li>
-</ul>
+    <p>Retorna una matriz con los elementos intercambiados.</p>
 </div>
 
 
@@ -3588,7 +4293,7 @@
     </dt>
     <dd>
         
-<span class="param-type">boolean</span>
+<span class="param-type">Array.&lt;any></span>
 
 
 
@@ -3604,7 +4309,7 @@
 
     
 
-    <h4 class="name" id=".isValidType"><span class="type-signature type-signature-static">(static) </span>isValidType<span class="signature">(type)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id=".unionArrays"><span class="type-signature type-signature-static">(static) </span>unionArrays<span class="signature">(arrayA, arrayB, segmentosA, segmentosB)</span><span class="type-signature"> &rarr; {Array}</span></h4>
 
     
 
@@ -3614,13 +4319,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si el tipo indicado se encuentra de los tipos validos javascript.</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Combina dos arrays siguiendo segmentos definidos para cada uno.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="validators-fn.js.html">validators-fn.js</a>, <a href="validators-fn.js.html#line203">line 203</a>
+        <a href="arrays-fn.js.html">arrays-fn.js</a>, <a href="arrays-fn.js.html#line404">line 404</a>
     </li></ul>
     </dd>
     
@@ -3693,13 +4398,13 @@
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>arrayA</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">Array</span>
 
 
 
@@ -3710,7 +4415,79 @@
 
             
 
-            <td class="description last"><p>Tipo de dato en formato string.</p></td>
+            <td class="description last"><p>Primer array de entrada.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>arrayB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Segundo array de entrada.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>segmentosA</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;(number|string)></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Segmentos de elementos a tomar de arrayA.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>segmentosB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;(number|string)></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Segmentos de elementos a tomar de arrayB.</p></td>
         </tr>
 
     
@@ -3736,7 +4513,9 @@
 
         
 <div class="param-desc">
-    <p>Retorna <code>true</code> si es un tipo valido y <code>false</code> si no es.</p>
+    <ul>
+<li>Nuevo array combinado según los segmentos.</li>
+</ul>
 </div>
 
 
@@ -3747,7 +4526,7 @@
     </dt>
     <dd>
         
-<span class="param-type">boolean</span>
+<span class="param-type">Array</span>
 
 
 

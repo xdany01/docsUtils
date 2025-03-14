@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>SelectorContent - Documentation</title>
+    <title>UtilsNumbers - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -37,7 +37,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">SelectorContent</h1>
+    <h1 class="page-title">UtilsNumbers</h1>
     
 
     
@@ -51,11 +51,11 @@
     
         <h2>
         
-            SelectorContent
+            UtilsNumbers
         
         </h2>
         
-            <div class="class-description usertext"><p>Clase para seleccionar y extraer contenido de una página web utilizando Cheerio y un validador.</p></div>
+            <div class="class-description usertext"><p>Clase UtilsNumbers que proporciona métodos estáticos para manejo de numeros.</p></div>
         
     
 </header>
@@ -70,7 +70,7 @@
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="SelectorContent"><span class="type-signature"></span>new SelectorContent<span class="signature">($, validator)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="UtilsNumbers"><span class="type-signature"></span>new UtilsNumbers<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
@@ -83,7 +83,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line4">line 4</a>
+        <a href="numbers-fn.js.html">numbers-fn.js</a>, <a href="numbers-fn.js.html#line4">line 4</a>
     </li></ul>
     </dd>
     
@@ -129,80 +129,6 @@
 
 
 
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>$</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Función de selección (por ejemplo, Cheerio o jQuery).</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>validator</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Objeto validador con métodos de validación.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -231,13 +157,6 @@
     
 
     
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="SelectorContent.html">SelectorContent</a></dt>
-            <dd></dd>
-        </dl>
-    
     
     
 
@@ -255,7 +174,7 @@
 
     
 
-    <h4 class="name" id="elementsToArray"><span class="type-signature"></span>elementsToArray<span class="signature">(elements)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    <h4 class="name" id=".arithmeticProgression"><span class="type-signature type-signature-static">(static) </span>arithmeticProgression<span class="signature">(n, lim)</span><span class="type-signature"> &rarr; {Array}</span></h4>
 
     
 
@@ -265,1434 +184,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Convierte elementos a un array</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Función que genera una progresión aritmética hasta un límite dado.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line323">line 323</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Convertir colección de elementos a arrayconst paragraphs = this.$('p');const arrayOfParagraphs = this.elementsToArray(paragraphs);// Para HTML con 3 párrafos// Resultado: [&lt;p>Párrafo 1&lt;/p>, &lt;p>Párrafo 2&lt;/p>, &lt;p>Párrafo 3&lt;/p>]</code></pre>
-
-    <pre class="prettyprint"><code>// Colección vacíaconst empty = this.$('div.nonexistent');const emptyArray = this.elementsToArray(empty);// Resultado: []</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>elements</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Objeto jQuery/Cheerio con elementos</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:cheerio</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Array de elementos</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getAttributeValue"><span class="type-signature"></span>getAttributeValue<span class="signature">(selector, attribute)</span><span class="type-signature"> &rarr; {string|null}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Obtiene el valor de un atributo de un elemento</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line250">line 250</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Obtener el valor del atributo href de un enlaceconst href = this.getAttributeValue('a.link', 'href');// Resultado: "https://example.com"</code></pre>
-
-    <pre class="prettyprint"><code>// Obtener el valor de un atributo personalizadoconst dataId = this.getAttributeValue('.product', 'data-id');// Resultado: "12345"</code></pre>
-
-    <pre class="prettyprint"><code>// Elemento que no existeconst notFound = this.getAttributeValue('.nonexistent', 'id');// Resultado: null</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Selector CSS para encontrar el elemento</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>attribute</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Nombre del atributo a obtener</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:cheerio</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Valor del atributo o null si el elemento no existe</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-|
-
-<span class="param-type">null</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getCleanText"><span class="type-signature"></span>getCleanText<span class="signature">(elements)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Obtiene el texto limpio del primer elemento</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line273">line 273</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Obtener el texto limpio de un elementoconst elements = this.$('p.description');const text = this.getCleanText(elements);// Para &lt;p class="description">  Texto con   espacios   &lt;/p>// Resultado: "Texto con espacios"</code></pre>
-
-    <pre class="prettyprint"><code>// Colección vacíaconst empty = this.$('div.nonexistent');const text = this.getCleanText(empty);// Resultado: ""</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>elements</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Objeto jQuery/Cheerio con elementos</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:cheerio</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Texto limpio del primer elemento o cadena vacía si no hay elementos</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getContent"><span class="type-signature"></span>getContent<span class="signature">(options)</span><span class="type-signature"> &rarr; {*}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Obtiene contenido basado en selectores con fallbacks</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line62">line 62</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Ejemplo básicoconst title = content.getContent({  selectors: 'h1',  defaultValue: 'Sin título'});// Resultado: "Título"</code></pre>
-
-    <pre class="prettyprint"><code>// Usando múltiples selectores con fallbackconst price = content.getContent({  selectors: ['.price', '.cost', 'span.value'],  defaultValue: '0',  toText: true});</code></pre>
-
-    <pre class="prettyprint"><code>// Obteniendo HTML en lugar de textoconst htmlContent = content.getContent({  selectors: '.product-description',  toText: false});</code></pre>
-
-    <pre class="prettyprint"><code>// Usando el modo completed para obtener información detalladaconst result = content.getContent({  selectors: ['.price', '.cost'],  completed: true});// Resultado: {//   selectors: ['.price', '.cost'],//   matchSelector: '.price',//   result: '100'// }</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Opciones de configuración</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selectors</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-|
-
-<span class="param-type">Array</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Selector único o array de selectores</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>defaultValue</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Valor predeterminado si no se encuentra contenido</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toArray</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve array de elementos</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toText</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve texto, si es false, devuelve HTML</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>completed</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve objeto completo con información adicional</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:Validator</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Contenido encontrado o valor predeterminado, u objeto completo si completed=true</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">*</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getElements"><span class="type-signature"></span>getElements<span class="signature">(selector)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Obtiene elementos que coinciden con un selector</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line222">line 222</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Obtener todos los párrafosconst paragraphs = this.getElements('p');// Resultado: Objeto Cheerio con todos los elementos &lt;p></code></pre>
-
-    <pre class="prettyprint"><code>// Selector más complejoconst items = this.getElements('ul.menu > li.item');// Resultado: Objeto Cheerio con los elementos &lt;li class="item"> dentro de &lt;ul class="menu"></code></pre>
-
-    <pre class="prettyprint"><code>// Selector vacíoconst empty = this.getElements('');// Resultado: Objeto Cheerio vacío</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Selector CSS para buscar elementos</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:cheerio</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Objeto jQuery/Cheerio con los elementos encontrados</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getHtml"><span class="type-signature"></span>getHtml<span class="signature">(elements)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Obtiene el HTML del primer elemento</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line298">line 298</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Obtener el HTML interno de un elementoconst elements = this.$('div.container');const html = this.getHtml(elements);// Para &lt;div class="container">&lt;span>Contenido&lt;/span>&lt;/div>// Resultado: "&lt;span>Contenido&lt;/span>"</code></pre>
-
-    <pre class="prettyprint"><code>// Colección vacíaconst empty = this.$('div.nonexistent');const html = this.getHtml(empty);// Resultado: ""</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>elements</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Objeto jQuery/Cheerio con elementos</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:cheerio</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>HTML del primer elemento o cadena vacía si no hay elementos</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getValueOrDefault"><span class="type-signature"></span>getValueOrDefault<span class="signature">(value, defaultValue)</span><span class="type-signature"> &rarr; {*}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor está vacío y devuelve un valor predeterminado si es así</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line198">line 198</a>
-    </li></ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Valor no vacíoconst result = this.getValueOrDefault("Texto", "Predeterminado");// Resultado: "Texto"</code></pre>
-
-    <pre class="prettyprint"><code>// Valor vacíoconst result = this.getValueOrDefault("", "Predeterminado");// Resultado: "Predeterminado"</code></pre>
-
-    <pre class="prettyprint"><code>// Valor nullconst result = this.getValueOrDefault(null, "Predeterminado");// Resultado: "Predeterminado"</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Valor a verificar</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>defaultValue</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Valor predeterminado a devolver si está vacío</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:Validator</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Valor original o valor predeterminado</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">*</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="processMultipleSelectors"><span class="type-signature"></span>processMultipleSelectors<span class="signature">(selectors, toArray, toText)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Procesa un array de selectores y devuelve el primer resultado no vacío</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line102">line 102</a>
+        <a href="numbers-fn.js.html">numbers-fn.js</a>, <a href="numbers-fn.js.html#line125">line 125</a>
     </li></ul>
     </dd>
     
@@ -1740,7 +238,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>// Internamente usado por getContentconst result = this.processMultipleSelectors(  ['.price', '.cost', 'span.value'],  false,  true);// Si '.price' existe y contiene "100":// Resultado: {//   selectors: ['.price', '.cost', 'span.value'],//   matchSelector: '.price',//   result: '100'// }</code></pre>
+    <pre class="prettyprint"><code>console.log(arithmeticProgression(5, 25)); // [5, 10, 15, 20, 25]</code></pre>
 
 
 
@@ -1770,13 +268,13 @@
 
         <tr>
             
-                <td class="name"><code>selectors</code></td>
+                <td class="name"><code>n</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Array</span>
+<span class="param-type">number</span>
 
 
 
@@ -1787,20 +285,20 @@
 
             
 
-            <td class="description last"><p>Array de selectores a procesar</p></td>
+            <td class="description last"><p>El paso de la progresión aritmética.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>toArray</code></td>
+                <td class="name"><code>lim</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">boolean</span>
+<span class="param-type">number</span>
 
 
 
@@ -1811,31 +309,7 @@
 
             
 
-            <td class="description last"><p>Si es true, devuelve un array de elementos</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toText</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve texto, si es false, devuelve HTML</p></td>
+            <td class="description last"><p>El límite superior de la progresión aritmética.</p></td>
         </tr>
 
     
@@ -1844,11 +318,6 @@
 
 
 
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:Validator</li>
-</ul>
 
 
 
@@ -1867,7 +336,7 @@
         
 <div class="param-desc">
     <ul>
-<li>Objeto con el resultado, selector utilizado y todos los selectores</li>
+<li>Un array con la progresión aritmética generada.</li>
 </ul>
 </div>
 
@@ -1879,7 +348,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
+<span class="param-type">Array</span>
 
 
 
@@ -1895,7 +364,7 @@
 
     
 
-    <h4 class="name" id="processSelector"><span class="type-signature"></span>processSelector<span class="signature">(selector, toArray, toText)</span><span class="type-signature"> &rarr; {Array|string}</span></h4>
+    <h4 class="name" id=".factorial"><span class="type-signature type-signature-static">(static) </span>factorial<span class="signature">(n)</span><span class="type-signature"> &rarr; {number}</span></h4>
 
     
 
@@ -1905,13 +374,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Procesa elementos según el selector especificado</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Función recursiva para calcular el factorial de un número.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line167">line 167</a>
+        <a href="numbers-fn.js.html">numbers-fn.js</a>, <a href="numbers-fn.js.html#line155">line 155</a>
     </li></ul>
     </dd>
     
@@ -1957,13 +426,9 @@
 
 
 
-    <h5 class="h5-examples">Examples</h5>
+    <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>// Obtener texto de un elementoconst titleText = this.processSelector('h1', false, true);// Resultado: "Título"</code></pre>
-
-    <pre class="prettyprint"><code>// Obtener HTML de un elementoconst titleHtml = this.processSelector('h1', false, false);// Resultado: "Título"</code></pre>
-
-    <pre class="prettyprint"><code>// Obtener array de elementosconst paragraphs = this.processSelector('p', true, false);// Resultado: [&lt;p>Párrafo 1&lt;/p>, &lt;p>Párrafo 2&lt;/p>]</code></pre>
+    <pre class="prettyprint"><code>console.log(factorial(6)); // Imprime el factorial de 6: 720</code></pre>
 
 
 
@@ -1993,13 +458,13 @@
 
         <tr>
             
-                <td class="name"><code>selector</code></td>
+                <td class="name"><code>n</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">number</span>
 
 
 
@@ -2010,55 +475,7 @@
 
             
 
-            <td class="description last"><p>Selector CSS para buscar elementos</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toArray</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve un array de elementos, si es false, devuelve un solo elemento</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toText</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve el texto del elemento, si es false, devuelve el HTML</p></td>
+            <td class="description last"><p>Número del cual se calculará el factorial.</p></td>
         </tr>
 
     
@@ -2067,11 +484,6 @@
 
 
 
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:cheerio</li>
-</ul>
 
 
 
@@ -2090,7 +502,7 @@
         
 <div class="param-desc">
     <ul>
-<li>Array de elementos o texto/HTML del primer elemento</li>
+<li>El factorial de n.</li>
 </ul>
 </div>
 
@@ -2102,10 +514,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Array</span>
-|
-
-<span class="param-type">string</span>
+<span class="param-type">number</span>
 
 
 
@@ -2121,7 +530,7 @@
 
     
 
-    <h4 class="name" id="processSingleSelector"><span class="type-signature"></span>processSingleSelector<span class="signature">(selector, toArray, toText)</span><span class="type-signature"> &rarr; {string|Array|null}</span></h4>
+    <h4 class="name" id=".fibonacci"><span class="type-signature type-signature-static">(static) </span>fibonacci<span class="signature">(n)</span><span class="type-signature"> &rarr; {Array}</span></h4>
 
     
 
@@ -2131,13 +540,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Procesa un solo selector que puede ser string o array [selector, attribute]</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Función para generar una secuencia de Fibonacci hasta el número n.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line136">line 136</a>
+        <a href="numbers-fn.js.html">numbers-fn.js</a>, <a href="numbers-fn.js.html#line55">line 55</a>
     </li></ul>
     </dd>
     
@@ -2183,11 +592,9 @@
 
 
 
-    <h5 class="h5-examples">Examples</h5>
+    <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>// Procesar un selector de textoconst result = this.processSingleSelector('h1', false, true);// Resultado: "Título"</code></pre>
-
-    <pre class="prettyprint"><code>// Procesar un selector de atributoconst href = this.processSingleSelector(['a.link', 'href'], false, true);// Resultado: "https://example.com"</code></pre>
+    <pre class="prettyprint"><code>console.log(fibonacci(6)); // [0, 1, 1, 2, 3, 5]</code></pre>
 
 
 
@@ -2217,16 +624,13 @@
 
         <tr>
             
-                <td class="name"><code>selector</code></td>
+                <td class="name"><code>n</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
-|
-
-<span class="param-type">Array</span>
+<span class="param-type">number</span>
 
 
 
@@ -2237,55 +641,7 @@
 
             
 
-            <td class="description last"><p>Selector o array [selector, atributo]</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toArray</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve un array de elementos</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toText</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve texto, si es false, devuelve HTML</p></td>
+            <td class="description last"><p>Número hasta el cual se generará la secuencia de Fibonacci.</p></td>
         </tr>
 
     
@@ -2312,7 +668,7 @@
         
 <div class="param-desc">
     <ul>
-<li>Resultado del procesamiento del selector</li>
+<li>Secuencia de Fibonacci hasta el número n.</li>
 </ul>
 </div>
 
@@ -2324,13 +680,1647 @@
     </dt>
     <dd>
         
-<span class="param-type">string</span>
-|
-
 <span class="param-type">Array</span>
-|
 
-<span class="param-type">null</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".gcdMultiple"><span class="type-signature type-signature-static">(static) </span>gcdMultiple<span class="signature">(&hellip;arr)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Función para calcular el máximo común divisor de múltiples números.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="numbers-fn.js.html">numbers-fn.js</a>, <a href="numbers-fn.js.html#line89">line 89</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>console.log(gcdMultiple(8, 36)) // 4console.log(gcdMultiple(...[12, 8, 32])) // 4</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Números de los cuales se calculará el máximo común divisor.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>El máximo común divisor de los números proporcionados.</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".geometricProgression"><span class="type-signature type-signature-static">(static) </span>geometricProgression<span class="signature">(end, start, step)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Función que calcula una progresión geométrica.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="numbers-fn.js.html">numbers-fn.js</a>, <a href="numbers-fn.js.html#line141">line 141</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>console.log(geometricProgression(256)) // [1, 2, 4, 8, 16, 32, 64, 128, 256]console.log(geometricProgression(256, 3)) // [3, 6, 12, 24, 48, 96, 192]console.log(geometricProgression(256, 1, 4)) // [1, 4, 16, 64, 256]</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>end</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>El valor final de la progresión.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>start</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>1</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>El valor inicial de la progresión (por defecto es 1).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>step</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>2</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>El paso de la progresión (por defecto es 2).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Un array con la progresión geométrica.</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".lcmMultiple"><span class="type-signature type-signature-static">(static) </span>lcmMultiple<span class="signature">(&hellip;arr)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Función para calcular el mínimo común múltiplo de múltiples números.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="numbers-fn.js.html">numbers-fn.js</a>, <a href="numbers-fn.js.html#line105">line 105</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>console.log(lcmMultiple(12, 7)); // 84console.log(lcmMultiple(...[1, 3, 4, 5])); // 60</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Números de los cuales se calculará el mínimo común múltiplo.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>El mínimo común múltiplo de los números proporcionados.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".logBase"><span class="type-signature type-signature-static">(static) </span>logBase<span class="signature">(b, n)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Función que calcula el logaritmo en base b de n.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="numbers-fn.js.html">numbers-fn.js</a>, <a href="numbers-fn.js.html#line177">line 177</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>console.log(logBase(5, 25)); // Muestra el resultado del logaritmo en base 5 de 25, que debería ser 2.console.log(logBase(5, 625)); // Muestra el resultado del logaritmo en base 5 de 625, que debería ser 4.</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Base del logaritmo.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>n</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Número del cual se calcula el logaritmo.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Resultado del logaritmo en base b de n.</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".randomIntArrayInRange"><span class="type-signature type-signature-static">(static) </span>randomIntArrayInRange<span class="signature">(min, max, n)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Genera un array de números enteros aleatorios dentro de un rango dado.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="numbers-fn.js.html">numbers-fn.js</a>, <a href="numbers-fn.js.html#line73">line 73</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>console.log(randomIntArrayInRange(12, 35, 10));// [ 34, 14, 27, 17, 30, 27, 20, 26, 21, 14 ]</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>min</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Valor mínimo del rango.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>max</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Valor máximo del rango.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>n</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>1</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Cantidad de números aleatorios a generar (por defecto es 1).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Array de números enteros aleatorios.</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".randomNumberGenerator"><span class="type-signature type-signature-static">(static) </span>randomNumberGenerator<span class="signature">(min, max, range)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Permite generar un número aleatorio multiplo de <code>range</code> dentro
+del rango ajustado <code>min</code> y <code>max</code>.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="numbers-fn.js.html">numbers-fn.js</a>, <a href="numbers-fn.js.html#line42">line 42</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>// Genera un número aleatorio entre 500 y 1000 en múltiplos de 50const numeroAleatorio = randomNumberGenerator(500, 1000, 50);console.log(numeroAleatorio);// Puede imprimir, por ejemplo, 750 o 850.</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>min</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Valor mínimo del rango de números.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>max</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Valor máximo del rango de números.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>range</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>100</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Brecha entre los distintos múmeros que se desea como resultado.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Retorna un numero aleatorio multiplo de <code>range</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".roundNumber"><span class="type-signature type-signature-static">(static) </span>roundNumber<span class="signature">(numero, decimales)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Redondea un número a una cantidad específica de decimales.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="numbers-fn.js.html">numbers-fn.js</a>, <a href="numbers-fn.js.html#line188">line 188</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>numero</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>El número que se desea redondear.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>decimales</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>La cantidad de decimales a los que se redondeará el número.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <ul>
+<li>Lanza un error si el valor proporcionado no es un número válido.</li>
+</ul>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>El número redondeado.</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".toFixed"><span class="type-signature type-signature-static">(static) </span>toFixed<span class="signature">(n, fixed)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Trunca un número a un número determinado de decimales sin redondear.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="numbers-fn.js.html">numbers-fn.js</a>, <a href="numbers-fn.js.html#line25">line 25</a>
+    </li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>toFixed(25.198726354, 1);// 25.1toFixed(25.198726354, 2);// 25.19toFixed(25.198726354, 3);// 25.198toFixed(25.198726354, 4);// 25.1987toFixed(25.198726354, 5);// 25.19872toFixed(25.198726354, 6);// 25.198726</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>n</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Numero a truncar</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fixed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Cantidad de decimales.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Retorna un string con el numero truncado.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
 
 
 
