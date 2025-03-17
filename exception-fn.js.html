@@ -47,9 +47,7 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import {UtilsString} from "./string-fn.js";
-
-/**
+            <pre class="prettyprint source linenums"><code>/**
  * Clase base para excepciones personalizadas.
  * Extiende de la clase Error para manejar errores con un código y opciones adicionales.
  */
@@ -88,7 +86,7 @@ class HttpClientException extends Exception {
      * @param {string} [params.code=''] - Código de error opcional.
      * @param {any} [params.option=null] - Información adicional sobre la excepción.
      */
-    constructor({message = 'Error en la petición HTTP', code = 'HTTP_CLIENT_ERROR', option = null}) {
+    constructor({message = 'Error en la petición HTTP', code = 'HTTP_CLIENT_ERROR', option = null} = {}) {
         super({message, code, option});
     }
 }
@@ -103,7 +101,7 @@ class NullPointerException extends Exception {
      * @param {string} [params.code=''] - Código de error opcional.
      * @param {any} [params.option=null] - Información adicional sobre la excepción.
      */
-    constructor({message = 'Se intentó acceder a una referencia nula', code = 'NULL_POINTER', option = null}) {
+    constructor({message = 'Se intentó acceder a una referencia nula', code = 'NULL_POINTER', option = null} = {}) {
         super({message, code, option});
     }
 }
@@ -118,7 +116,7 @@ class IndexOutOfBoundsException extends Exception {
      * @param {string} [params.code=''] - Código de error opcional.
      * @param {any} [params.option=null] - Información adicional sobre la excepción.
      */
-    constructor({message = 'Índice fuera de rango', code = 'INDEX_OUT_OF_BOUNDS', option = null}) {
+    constructor({message = 'Índice fuera de rango', code = 'INDEX_OUT_OF_BOUNDS', option = null} = {}) {
         super({message, code, option});
     }
 }
@@ -133,7 +131,7 @@ class ArithmeticException extends Exception {
      * @param {string} [params.code=''] - Código de error opcional.
      * @param {any} [params.option=null] - Información adicional sobre la excepción.
      */
-    constructor({message = 'Operación aritmética inválida', code = 'ARITHMETIC_ERROR', option = null}) {
+    constructor({message = 'Operación aritmética inválida', code = 'ARITHMETIC_ERROR', option = null} = {}) {
         super({message, code, option});
     }
 }
@@ -148,7 +146,7 @@ class TypeCastException extends Exception {
      * @param {string} [params.code=''] - Código de error opcional.
      * @param {any} [params.option=null] - Información adicional sobre la excepción.
      */
-    constructor({message = 'Conversión de tipo inválida', code = 'TYPE_CAST_ERROR', option = null}) {
+    constructor({message = 'Conversión de tipo inválida', code = 'TYPE_CAST_ERROR', option = null} = {}) {
         super({message, code, option});
     }
 }
@@ -163,7 +161,7 @@ class IllegalArgumentException extends Exception {
      * @param {string} [params.code=''] - Código de error opcional.
      * @param {any} [params.option=null] - Información adicional sobre la excepción.
      */
-    constructor({message = 'Argumento inválido', code = 'ILLEGAL_ARGUMENT', option = null}) {
+    constructor({message = 'Argumento inválido', code = 'ILLEGAL_ARGUMENT', option = null} = {}) {
         super({message, code, option});
     }
 }
@@ -178,7 +176,7 @@ class UnsupportedOperationException extends Exception {
      * @param {string} [params.code=''] - Código de error opcional.
      * @param {any} [params.option=null] - Información adicional sobre la excepción.
      */
-    constructor({message = 'Operación no soportada', code = 'UNSUPPORTED_OPERATION', option = null}) {
+    constructor({message = 'Operación no soportada', code = 'UNSUPPORTED_OPERATION', option = null} = {}) {
         super({message, code, option});
     }
 }
@@ -193,7 +191,7 @@ class OutOfMemoryException extends Exception {
      * @param {string} [params.code=''] - Código de error opcional.
      * @param {any} [params.option=null] - Información adicional sobre la excepción.
      */
-    constructor({message = 'Memoria insuficiente', code = 'OUT_OF_MEMORY', option = null}) {
+    constructor({message = 'Memoria insuficiente', code = 'OUT_OF_MEMORY', option = null} = {}) {
         super({message, code, option});
     }
 }
@@ -208,7 +206,7 @@ class IllegalFormatException extends Exception {
      * @param {string} [params.code=''] - Código de error opcional.
      * @param {any} [params.option=null] - Información adicional sobre la excepción.
      */
-    constructor({message = 'Formato inválido', code = 'ILLEGAL_FORMAT', option = null}) {
+    constructor({message = 'Formato inválido', code = 'ILLEGAL_FORMAT', option = null} = {}) {
         super({message, code, option});
     }
 }
