@@ -47,22 +47,21 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
-/**
+            <pre class="prettyprint source linenums"><code>/**
  * Clase para manejar logs con diferentes niveles de severidad y estilos en la consola.
  */
 class Logger {
     /**
      * Registra un mensaje en la consola con estilos específicos según el tipo de log.
      * @param {"warning" | "error" | "info" | "success"} type - Tipo de log.
-     * @param {Object} params - Parámetros del mensaje de log.
-     * @param {string} params.message - Mensaje a registrar.
+     * @param {string} message - Mensaje a registrar.
+     * @param {Object} [params={}] - Parámetros opcionales del mensaje de log.
      * @param {string} [params.error=''] - Error opcional asociado al mensaje.
      * @param {number} [params.attempt=0] - Número de intento actual.
      * @param {number} [params.retries=0] - Número total de reintentos.
      * @param {string} [params.url=''] - URL opcional asociada al mensaje.
      */
-    static log(type, { message, error = '', attempt = 0, retries = 0, url = '' }) {
+    static log(type, message, { error = '', attempt = 0, retries = 0, url = '' } = {}) {
         const colors = {
             warning: 'orange',
             error: 'tomato',
@@ -91,27 +90,31 @@ class Logger {
 
     /**
      * Registra un mensaje de advertencia en la consola.
-     * @param {Object} params - Parámetros del mensaje de advertencia.
+     * @param {string} message - Mensaje de advertencia.
+     * @param {Object} [params={}] - Parámetros opcionales del mensaje.
      */
-    static warning(params) { this.log('warning', params); }
+    static warning(message, params = {}) { this.log('warning', message, params); }
 
     /**
      * Registra un mensaje de error en la consola.
-     * @param {Object} params - Parámetros del mensaje de error.
+     * @param {string} message - Mensaje de error.
+     * @param {Object} [params={}] - Parámetros opcionales del mensaje.
      */
-    static error(params) { this.log('error', params); }
+    static error(message, params = {}) { this.log('error', message, params); }
 
     /**
      * Registra un mensaje informativo en la consola.
-     * @param {Object} params - Parámetros del mensaje informativo.
+     * @param {string} message - Mensaje informativo.
+     * @param {Object} [params={}] - Parámetros opcionales del mensaje.
      */
-    static info(params) { this.log('info', params); }
+    static info(message, params = {}) { this.log('info', message, params); }
 
     /**
      * Registra un mensaje de éxito en la consola.
-     * @param {Object} params - Parámetros del mensaje de éxito.
+     * @param {string} message - Mensaje de éxito.
+     * @param {Object} [params={}] - Parámetros opcionales del mensaje.
      */
-    static success(params) { this.log('success', params); }
+    static success(message, params = {}) { this.log('success', message, params); }
 }
 </code></pre>
         </article>
