@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>utilitiesImages-fn.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnsiColors.html">AnsiColors</a></li><li><a href="ArithmeticException.html">ArithmeticException</a></li><li><a href="Exception.html">Exception</a></li><li><a href="GestorBuffersImagen.html">GestorBuffersImagen</a><ul class='methods'><li data-type='method'><a href="GestorBuffersImagen.html#agregar">agregar</a></li><li data-type='method'><a href="GestorBuffersImagen.html#guardarTodos">guardarTodos</a></li><li data-type='method'><a href="GestorBuffersImagen.html#listar">listar</a></li><li data-type='method'><a href="GestorBuffersImagen.html#obtener">obtener</a></li></ul></li><li><a href="HttpClientException.html">HttpClientException</a></li><li><a href="IllegalArgumentException.html">IllegalArgumentException</a></li><li><a href="IllegalFormatException.html">IllegalFormatException</a></li><li><a href="IndexOutOfBoundsException.html">IndexOutOfBoundsException</a></li><li><a href="Logger.html">Logger</a><ul class='methods'><li data-type='method'><a href="Logger.html#.error">error</a></li><li data-type='method'><a href="Logger.html#.info">info</a></li><li data-type='method'><a href="Logger.html#.log">log</a></li><li data-type='method'><a href="Logger.html#.success">success</a></li><li data-type='method'><a href="Logger.html#.warning">warning</a></li></ul></li><li><a href="NullPointerException.html">NullPointerException</a></li><li><a href="OutOfMemoryException.html">OutOfMemoryException</a></li><li><a href="SelectorContent.html">SelectorContent</a><ul class='methods'><li data-type='method'><a href="SelectorContent.html#elementsToArray">elementsToArray</a></li><li data-type='method'><a href="SelectorContent.html#getAttributeValue">getAttributeValue</a></li><li data-type='method'><a href="SelectorContent.html#getCleanText">getCleanText</a></li><li data-type='method'><a href="SelectorContent.html#getContent">getContent</a></li><li data-type='method'><a href="SelectorContent.html#getElements">getElements</a></li><li data-type='method'><a href="SelectorContent.html#getHtml">getHtml</a></li><li data-type='method'><a href="SelectorContent.html#getValueOrDefault">getValueOrDefault</a></li><li data-type='method'><a href="SelectorContent.html#processMultipleSelectors">processMultipleSelectors</a></li><li data-type='method'><a href="SelectorContent.html#processSelector">processSelector</a></li><li data-type='method'><a href="SelectorContent.html#processSingleSelector">processSingleSelector</a></li></ul></li><li><a href="Sequence.html">Sequence</a><ul class='methods'><li data-type='method'><a href="Sequence.html#next">next</a></li></ul></li><li><a href="Task.html">Task</a><ul class='methods'><li data-type='method'><a href="Task.html#catch">catch</a></li><li data-type='method'><a href="Task.html#map">map</a></li><li data-type='method'><a href="Task.html#run">run</a></li><li data-type='method'><a href="Task.html#tap">tap</a></li><li data-type='method'><a href="Task.html#.from">from</a></li></ul></li><li><a href="TypeCastException.html">TypeCastException</a></li><li><a href="TypeMismatchException.html">TypeMismatchException</a></li><li><a href="UnsupportedOperationException.html">UnsupportedOperationException</a></li><li><a href="UserAgentRotatorFn.html">UserAgentRotatorFn</a><ul class='methods'><li data-type='method'><a href="UserAgentRotatorFn.html#addUserAgent">addUserAgent</a></li><li data-type='method'><a href="UserAgentRotatorFn.html#filterUserAgents">filterUserAgents</a></li><li data-type='method'><a href="UserAgentRotatorFn.html#getCurrent">getCurrent</a></li><li data-type='method'><a href="UserAgentRotatorFn.html#getInfo">getInfo</a></li><li data-type='method'><a href="UserAgentRotatorFn.html#getNext">getNext</a></li><li data-type='method'><a href="UserAgentRotatorFn.html#getRandom">getRandom</a></li><li data-type='method'><a href="UserAgentRotatorFn.html#reset">reset</a></li><li data-type='method'><a href="UserAgentRotatorFn.html#setType">setType</a></li></ul></li><li><a href="UtilsArrays.html">UtilsArrays</a><ul class='methods'><li data-type='method'><a href="UtilsArrays.html#.accumulate">accumulate</a></li><li data-type='method'><a href="UtilsArrays.html#.average">average</a></li><li data-type='method'><a href="UtilsArrays.html#.chunk">chunk</a></li><li data-type='method'><a href="UtilsArrays.html#.countOccurrences">countOccurrences</a></li><li data-type='method'><a href="UtilsArrays.html#.firstIndex">firstIndex</a></li><li data-type='method'><a href="UtilsArrays.html#.firstObjMatch">firstObjMatch</a></li><li data-type='method'><a href="UtilsArrays.html#.generateObjectArray">generateObjectArray</a></li><li data-type='method'><a href="UtilsArrays.html#.getIntersection">getIntersection</a></li><li data-type='method'><a href="UtilsArrays.html#.indexOfMax">indexOfMax</a></li><li data-type='method'><a href="UtilsArrays.html#.indexOfMin">indexOfMin</a></li><li data-type='method'><a href="UtilsArrays.html#.indices">indices</a></li><li data-type='method'><a href="UtilsArrays.html#.insertElements">insertElements</a></li><li data-type='method'><a href="UtilsArrays.html#.isEqualArray">isEqualArray</a></li><li data-type='method'><a href="UtilsArrays.html#.lastIndex">lastIndex</a></li><li data-type='method'><a href="UtilsArrays.html#.partition">partition</a></li><li data-type='method'><a href="UtilsArrays.html#.randomItem">randomItem</a></li><li data-type='method'><a href="UtilsArrays.html#.range">range</a></li><li data-type='method'><a href="UtilsArrays.html#.removeDuplicate">removeDuplicate</a></li><li data-type='method'><a href="UtilsArrays.html#.removeDuplicatesArrObj">removeDuplicatesArrObj</a></li><li data-type='method'><a href="UtilsArrays.html#.shuffle">shuffle</a></li><li data-type='method'><a href="UtilsArrays.html#.sortElementsByArrayOfText">sortElementsByArrayOfText</a></li><li data-type='method'><a href="UtilsArrays.html#.swapItems">swapItems</a></li><li data-type='method'><a href="UtilsArrays.html#.unionArrays">unionArrays</a></li></ul></li><li><a href="UtilsNumbers.html">UtilsNumbers</a><ul class='methods'><li data-type='method'><a href="UtilsNumbers.html#.arithmeticProgression">arithmeticProgression</a></li><li data-type='method'><a href="UtilsNumbers.html#.factorial">factorial</a></li><li data-type='method'><a href="UtilsNumbers.html#.fibonacci">fibonacci</a></li><li data-type='method'><a href="UtilsNumbers.html#.gcdMultiple">gcdMultiple</a></li><li data-type='method'><a href="UtilsNumbers.html#.geometricProgression">geometricProgression</a></li><li data-type='method'><a href="UtilsNumbers.html#.lcmMultiple">lcmMultiple</a></li><li data-type='method'><a href="UtilsNumbers.html#.logBase">logBase</a></li><li data-type='method'><a href="UtilsNumbers.html#.randomIntArrayInRange">randomIntArrayInRange</a></li><li data-type='method'><a href="UtilsNumbers.html#.randomNumberGenerator">randomNumberGenerator</a></li><li data-type='method'><a href="UtilsNumbers.html#.roundNumber">roundNumber</a></li><li data-type='method'><a href="UtilsNumbers.html#.toFixed">toFixed</a></li></ul></li><li><a href="UtilsObject.html">UtilsObject</a><ul class='methods'><li data-type='method'><a href="UtilsObject.html#.combinedObjectWithArrays">combinedObjectWithArrays</a></li><li data-type='method'><a href="UtilsObject.html#.commonKeys">commonKeys</a></li><li data-type='method'><a href="UtilsObject.html#.countBy">countBy</a></li><li data-type='method'><a href="UtilsObject.html#.getCommonKeys">getCommonKeys</a></li><li data-type='method'><a href="UtilsObject.html#.getObjFromKey">getObjFromKey</a></li><li data-type='method'><a href="UtilsObject.html#.groupBy">groupBy</a></li><li data-type='method'><a href="UtilsObject.html#.isEqualObj">isEqualObj</a></li><li data-type='method'><a href="UtilsObject.html#.maxBy">maxBy</a></li><li data-type='method'><a href="UtilsObject.html#.minBy">minBy</a></li><li data-type='method'><a href="UtilsObject.html#.pluck">pluck</a></li><li data-type='method'><a href="UtilsObject.html#.removeArrayFromValues">removeArrayFromValues</a></li><li data-type='method'><a href="UtilsObject.html#.removeDuplicatesByProperty">removeDuplicatesByProperty</a></li><li data-type='method'><a href="UtilsObject.html#.removeDuplicatesFromValues">removeDuplicatesFromValues</a></li><li data-type='method'><a href="UtilsObject.html#.removeNullUndefined">removeNullUndefined</a></li><li data-type='method'><a href="UtilsObject.html#.removeObjectSafely">removeObjectSafely</a></li><li data-type='method'><a href="UtilsObject.html#.renameKeys">renameKeys</a></li><li data-type='method'><a href="UtilsObject.html#.sortBy">sortBy</a></li><li data-type='method'><a href="UtilsObject.html#.sortObj">sortObj</a></li><li data-type='method'><a href="UtilsObject.html#.splitObjInKeys">splitObjInKeys</a></li><li data-type='method'><a href="UtilsObject.html#.toObject">toObject</a></li></ul></li><li><a href="UtilsString.html">UtilsString</a><ul class='methods'><li data-type='method'><a href="UtilsString.html#.bytesString">bytesString</a></li><li data-type='method'><a href="UtilsString.html#.camelToKebab">camelToKebab</a></li><li data-type='method'><a href="UtilsString.html#.capitalize">capitalize</a></li><li data-type='method'><a href="UtilsString.html#.characterCount">characterCount</a></li><li data-type='method'><a href="UtilsString.html#.cleanText">cleanText</a></li><li data-type='method'><a href="UtilsString.html#.concatWS">concatWS</a></li><li data-type='method'><a href="UtilsString.html#.countWords">countWords</a></li><li data-type='method'><a href="UtilsString.html#.decodeHtmlEntities">decodeHtmlEntities</a></li><li data-type='method'><a href="UtilsString.html#.decomposeUrl">decomposeUrl</a></li><li data-type='method'><a href="UtilsString.html#.ext">ext</a></li><li data-type='method'><a href="UtilsString.html#.extractNumber">extractNumber</a></li><li data-type='method'><a href="UtilsString.html#.generateString">generateString</a></li><li data-type='method'><a href="UtilsString.html#.isPalindrome">isPalindrome</a></li><li data-type='method'><a href="UtilsString.html#.kebabToCamel">kebabToCamel</a></li><li data-type='method'><a href="UtilsString.html#.mask">mask</a></li><li data-type='method'><a href="UtilsString.html#.prependNumbers">prependNumbers</a></li><li data-type='method'><a href="UtilsString.html#.removeAcents">removeAcents</a></li><li data-type='method'><a href="UtilsString.html#.removeEmptyLines">removeEmptyLines</a></li><li data-type='method'><a href="UtilsString.html#.replaceSpaces">replaceSpaces</a></li><li data-type='method'><a href="UtilsString.html#.slugify">slugify</a></li><li data-type='method'><a href="UtilsString.html#.sortLines">sortLines</a></li><li data-type='method'><a href="UtilsString.html#.toCamelCase">toCamelCase</a></li><li data-type='method'><a href="UtilsString.html#.toPascalCase">toPascalCase</a></li><li data-type='method'><a href="UtilsString.html#.trim">trim</a></li><li data-type='method'><a href="UtilsString.html#.truncate">truncate</a></li><li data-type='method'><a href="UtilsString.html#.upperCaseWords">upperCaseWords</a></li></ul></li><li><a href="Validator.html">Validator</a><ul class='methods'><li data-type='method'><a href="Validator.html#.areArraySame">areArraySame</a></li><li data-type='method'><a href="Validator.html#.indexInRange">indexInRange</a></li><li data-type='method'><a href="Validator.html#.isArray">isArray</a></li><li data-type='method'><a href="Validator.html#.isBigInt">isBigInt</a></li><li data-type='method'><a href="Validator.html#.isBoolean">isBoolean</a></li><li data-type='method'><a href="Validator.html#.isEmpty">isEmpty</a></li><li data-type='method'><a href="Validator.html#.isEncoded">isEncoded</a></li><li data-type='method'><a href="Validator.html#.isFloat">isFloat</a></li><li data-type='method'><a href="Validator.html#.isFunction">isFunction</a></li><li data-type='method'><a href="Validator.html#.isInteger">isInteger</a></li><li data-type='method'><a href="Validator.html#.isNil">isNil</a></li><li data-type='method'><a href="Validator.html#.isNull">isNull</a></li><li data-type='method'><a href="Validator.html#.isNumber">isNumber</a></li><li data-type='method'><a href="Validator.html#.isObject">isObject</a></li><li data-type='method'><a href="Validator.html#.isOneDimensional">isOneDimensional</a></li><li data-type='method'><a href="Validator.html#.isString">isString</a></li><li data-type='method'><a href="Validator.html#.isSymbol">isSymbol</a></li><li data-type='method'><a href="Validator.html#.isType">isType</a></li><li data-type='method'><a href="Validator.html#.isUndefined">isUndefined</a></li><li data-type='method'><a href="Validator.html#.isValidType">isValidType</a></li><li data-type='method'><a href="Validator.html#.validateObject">validateObject</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-Various.html">Various</a><ul class='methods'><li data-type='method'><a href="module-Various.html#.applyMixins">applyMixins</a></li><li data-type='method'><a href="module-Various.html#.bubbleSort">bubbleSort</a></li><li data-type='method'><a href="module-Various.html#.bucketSort">bucketSort</a></li><li data-type='method'><a href="module-Various.html#.convertirMilisegundos">convertirMilisegundos</a></li><li data-type='method'><a href="module-Various.html#.decimalToHex">decimalToHex</a></li><li data-type='method'><a href="module-Various.html#.decodeJWT">decodeJWT</a></li><li data-type='method'><a href="module-Various.html#.generateShades">generateShades</a></li><li data-type='method'><a href="module-Various.html#.generateUniqueId">generateUniqueId</a></li><li data-type='method'><a href="module-Various.html#.getComplementaryColor">getComplementaryColor</a></li><li data-type='method'><a href="module-Various.html#.getMaxByProperty">getMaxByProperty</a></li><li data-type='method'><a href="module-Various.html#.getSuplementaryColor">getSuplementaryColor</a></li><li data-type='method'><a href="module-Various.html#.getTypeOf">getTypeOf</a></li><li data-type='method'><a href="module-Various.html#.getVariablesInText">getVariablesInText</a></li><li data-type='method'><a href="module-Various.html#.heapsort">heapsort</a></li><li data-type='method'><a href="module-Various.html#.hexToDecimal">hexToDecimal</a></li><li data-type='method'><a href="module-Various.html#.hexToHSL">hexToHSL</a></li><li data-type='method'><a href="module-Various.html#.hexToRgb">hexToRgb</a></li><li data-type='method'><a href="module-Various.html#.hslToHex">hslToHex</a></li><li data-type='method'><a href="module-Various.html#.hslToRgb">hslToRgb</a></li><li data-type='method'><a href="module-Various.html#.insertionSort">insertionSort</a></li><li data-type='method'><a href="module-Various.html#.measureAsyncFn">measureAsyncFn</a></li><li data-type='method'><a href="module-Various.html#.measureSyncFn">measureSyncFn</a></li><li data-type='method'><a href="module-Various.html#.mergeSort">mergeSort</a></li><li data-type='method'><a href="module-Various.html#.myDecodeURI">myDecodeURI</a></li><li data-type='method'><a href="module-Various.html#.myEncodeURI">myEncodeURI</a></li><li data-type='method'><a href="module-Various.html#.normalizeUrl">normalizeUrl</a></li><li data-type='method'><a href="module-Various.html#.parseJSONToString">parseJSONToString</a></li><li data-type='method'><a href="module-Various.html#.parseStringToJSON">parseStringToJSON</a></li><li data-type='method'><a href="module-Various.html#.pipe">pipe</a></li><li data-type='method'><a href="module-Various.html#.quickSort">quickSort</a></li><li data-type='method'><a href="module-Various.html#.randomBoolean">randomBoolean</a></li><li data-type='method'><a href="module-Various.html#.randomColorHex">randomColorHex</a></li><li data-type='method'><a href="module-Various.html#.rgbToHex">rgbToHex</a></li><li data-type='method'><a href="module-Various.html#.rgbToHsl">rgbToHsl</a></li><li data-type='method'><a href="module-Various.html#.secondsToTimeString">secondsToTimeString</a></li><li data-type='method'><a href="module-Various.html#.selectionSort">selectionSort</a></li><li data-type='method'><a href="module-Various.html#.timeStringToSeconds">timeStringToSeconds</a></li><li data-type='method'><a href="module-Various.html#.timestampToutc">timestampToutc</a></li><li data-type='method'><a href="module-Various.html#.wait">wait</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#analizarBuffer">analizarBuffer</a></li><li><a href="global.html#base64ABuffer">base64ABuffer</a></li><li><a href="global.html#bufferAFormatos">bufferAFormatos</a></li><li><a href="global.html#bufferAImagen">bufferAImagen</a></li><li><a href="global.html#bufferAImagenAsync">bufferAImagenAsync</a></li><li><a href="global.html#compararBuffers">compararBuffers</a></li><li><a href="global.html#crearHashImagen">crearHashImagen</a></li><li><a href="global.html#descargarImagenABuffer">descargarImagenABuffer</a></li><li><a href="global.html#detectarFormato">detectarFormato</a></li><li><a href="global.html#esImagenValida">esImagenValida</a></li><li><a href="global.html#guardarConMetadatos">guardarConMetadatos</a></li><li><a href="global.html#guardarImagenConFormato">guardarImagenConFormato</a></li><li><a href="global.html#streamABuffer">streamABuffer</a></li><li><a href="global.html#validarBufferImagen">validarBufferImagen</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">utilitiesImages-fn.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// Dependencias requeridas de Node.js
+import fs from 'fs';
+import http from 'http';
+import https from 'https';
+import crypto from 'crypto';
+
+/**
+ * Descarga una imagen desde una URL y la convierte a Buffer
+ * @requires http - Módulo HTTP de Node.js
+ * @requires https - Módulo HTTPS de Node.js
+ * @param {string} imageUrl - URL de la imagen a descargar
+ * @returns {Promise&lt;Buffer>} Promise que resuelve con el buffer de la imagen
+ * @throws {Error} Si hay error HTTP o de red
+ *
+ * @example
+ * descargarImagenABuffer('https://example.com/imagen.jpg')
+ *   .then(buffer => console.log(`Imagen descargada: ${buffer.length} bytes`))
+ *   .catch(error => console.error('Error:', error));
+ */
+function descargarImagenABuffer(imageUrl) {
+    return new Promise((resolve, reject) => {
+        const parsedUrl = new URL(imageUrl);
+        const client = parsedUrl.protocol === 'https:' ? https : http;
+
+        client.get(imageUrl, (response) => {
+            if (response.statusCode !== 200) {
+                reject(new Error(`Error HTTP: ${response.statusCode}`));
+                return;
+            }
+
+            const chunks = [];
+
+            response.on('data', (chunk) => {
+                chunks.push(chunk);
+            });
+
+            response.on('end', () => {
+                const buffer = Buffer.concat(chunks);
+                console.log(`Imagen descargada: ${buffer.length} bytes`);
+                resolve(buffer);
+            });
+
+        }).on('error', (error) => {
+            reject(error);
+        });
+    });
+}
+
+/**
+ * Convierte una cadena Base64 a Buffer de imagen
+ * @param {string} base64String - Cadena en formato Base64 (con o sin prefijo data:image)
+ * @returns {Buffer|null} Buffer de la imagen o null si hay error
+ *
+ * @example
+ * const base64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...';
+ * const buffer = base64ABuffer(base64);
+ * if (buffer) {
+ *   console.log(`Buffer creado: ${buffer.length} bytes`);
+ * }
+ */
+function base64ABuffer(base64String) {
+    try {
+        // Remover prefijo data:image si existe
+        const base64Data = base64String.replace(/^data:image\/[a-z]+;base64,/, '');
+        const buffer = Buffer.from(base64Data, 'base64');
+
+        console.log(`Convertido desde base64: ${buffer.length} bytes`);
+        return buffer;
+    } catch (error) {
+        console.error('Error convirtiendo base64:', error);
+        return null;
+    }
+}
+
+/**
+ * Convierte un stream de datos a Buffer
+ * @param {ReadableStream} stream - Stream de datos de imagen
+ * @returns {Promise&lt;Buffer>} Promise que resuelve con el buffer completo
+ * @throws {Error} Si hay error en el stream
+ *
+ * @example
+ * const fileStream = fs.createReadStream('imagen.jpg');
+ * streamABuffer(fileStream)
+ *   .then(buffer => console.log(`Stream convertido: ${buffer.length} bytes`))
+ *   .catch(error => console.error('Error:', error));
+ */
+function streamABuffer(stream) {
+    return new Promise((resolve, reject) => {
+        const chunks = [];
+
+        stream.on('data', (chunk) => {
+            chunks.push(chunk);
+        });
+
+        stream.on('end', () => {
+            const buffer = Buffer.concat(chunks);
+            resolve(buffer);
+        });
+
+        stream.on('error', (error) => {
+            reject(error);
+        });
+    });
+}
+
+/**
+ * Crea un hash SHA256 de un buffer de imagen para verificar integridad
+ * @requires crypto - Módulo crypto de Node.js
+ * @param {Buffer} buffer - Buffer de la imagen
+ * @returns {string} Hash SHA256 en formato hexadecimal
+ *
+ * @example
+ * const buffer = fs.readFileSync('imagen.jpg');
+ * const hash = crearHashImagen(buffer);
+ * console.log(`Hash: ${hash}`);
+ */
+function crearHashImagen(buffer) {
+    const hash = crypto.createHash('sha256');
+    hash.update(buffer);
+    const hashHex = hash.digest('hex');
+
+    console.log(`Hash SHA256: ${hashHex}`);
+    return hashHex;
+}
+
+/**
+ * Compara dos buffers de imágenes usando sus hashes SHA256
+ * @requires crypto - Módulo crypto de Node.js
+ * @param {Buffer} buffer1 - Primer buffer a comparar
+ * @param {Buffer} buffer2 - Segundo buffer a comparar
+ * @returns {Object} Objeto con resultado de la comparación
+ * @returns {boolean} returns.sonIguales - Si los buffers son idénticos
+ * @returns {string} returns.hash1 - Hash del primer buffer
+ * @returns {string} returns.hash2 - Hash del segundo buffer
+ * @returns {number} returns.tamano1 - Tamaño del primer buffer
+ * @returns {number} returns.tamano2 - Tamaño del segundo buffer
+ *
+ * @example
+ * const buffer1 = fs.readFileSync('imagen1.jpg');
+ * const buffer2 = fs.readFileSync('imagen2.jpg');
+ * const comparacion = compararBuffers(buffer1, buffer2);
+ * console.log(`Son iguales: ${comparacion.sonIguales}`);
+ */
+function compararBuffers(buffer1, buffer2) {
+    if (!buffer1 || !buffer2) {
+        return {sonIguales: false, error: 'Uno de los buffers es nulo'};
+    }
+
+    const hash1 = crearHashImagen(buffer1);
+    const hash2 = crearHashImagen(buffer2);
+
+    return {
+        sonIguales: hash1 === hash2,
+        hash1,
+        hash2,
+        tamano1: buffer1.length,
+        tamano2: buffer2.length
+    };
+}
+
+/**
+ * Guarda un buffer como imagen con archivo de metadatos asociado
+ * @requires fs - Módulo fs de Node.js
+ * @requires crypto - Módulo crypto de Node.js
+ * @param {Buffer} buffer - Buffer de la imagen a guardar
+ * @param {string} nombreBase - Nombre base para los archivos (sin extensión)
+ * @param {Object} [metadatos={}] - Metadatos adicionales a incluir
+ * @returns {Object} Información de los archivos creados
+ * @returns {string} returns.imagen - Nombre del archivo de imagen
+ * @returns {string} returns.metadatos - Nombre del archivo de metadatos
+ * @returns {Object} returns.info - Información completa de metadatos
+ *
+ * @example
+ * const buffer = fs.readFileSync('temp.jpg');
+ * const resultado = guardarConMetadatos(buffer, 'mi-imagen', {
+ *   autor: 'Juan Pérez',
+ *   descripcion: 'Foto de prueba'
+ * });
+ * console.log(`Guardado: ${resultado.imagen}`);
+ */
+function guardarConMetadatos(buffer, nombreBase, metadatos = {}) {
+    const formato = detectarFormato(buffer);
+    const extension = formato === 'jpeg' ? 'jpg' : formato;
+    const nombreImagen = `${nombreBase}.${extension}`;
+    const nombreMeta = `${nombreBase}_meta.json`;
+
+    // Guardar imagen
+    fs.writeFileSync(nombreImagen, buffer);
+
+    // Crear y guardar metadatos
+    const meta = {
+        archivo: nombreImagen,
+        formato,
+        tamano: buffer.length,
+        hash: crearHashImagen(buffer),
+        fechaCreacion: new Date().toISOString(),
+        ...metadatos
+    };
+
+    fs.writeFileSync(nombreMeta, JSON.stringify(meta, null, 2));
+
+    console.log(`Guardado: ${nombreImagen} con metadatos en ${nombreMeta}`);
+    return {imagen: nombreImagen, metadatos: nombreMeta, info: meta};
+}
+
+/**
+ * Convierte un buffer a múltiples formatos de salida
+ * @param {Buffer} buffer - Buffer a convertir
+ * @returns {Object|null} Objeto con diferentes formatos o null si hay error
+ * @returns {Array&lt;number>} returns.array - Array de bytes
+ * @returns {string} returns.hex - Representación hexadecimal
+ * @returns {string} returns.base64 - Cadena Base64
+ * @returns {Uint8Array} returns.uint8Array - Uint8Array para navegadores
+ * @returns {string} returns.json - JSON serializado del array
+ *
+ * @example
+ * const buffer = Buffer.from([255, 216, 255, 224]);
+ * const formatos = bufferAFormatos(buffer);
+ * console.log(`Hex: ${formatos.hex}`);
+ * console.log(`Base64: ${formatos.base64}`);
+ */
+function bufferAFormatos(buffer) {
+    const resultados = {};
+
+    try {
+        // Array de bytes
+        resultados.array = Array.from(buffer);
+
+        // Hexadecimal
+        resultados.hex = buffer.toString('hex');
+
+        // Base64
+        resultados.base64 = buffer.toString('base64');
+
+        // Uint8Array para usar en navegadores
+        resultados.uint8Array = new Uint8Array(buffer);
+
+        // JSON (para serialización)
+        resultados.json = JSON.stringify(Array.from(buffer));
+
+        console.log('Buffer convertido a múltiples formatos');
+        return resultados;
+
+    } catch (error) {
+        console.error('Error en conversión:', error);
+        return null;
+    }
+}
+
+/**
+ * Realiza validación avanzada de un buffer de imagen
+ * @param {Buffer} buffer - Buffer a validar
+ * @returns {Object} Resultado de la validación
+ * @returns {boolean} returns.esValido - Si el buffer es una imagen válida
+ * @returns {string} returns.formato - Formato detectado de la imagen
+ * @returns {Array&lt;string>} returns.errores - Lista de errores encontrados
+ * @returns {Array&lt;string>} returns.advertencias - Lista de advertencias
+ *
+ * @example
+ * const buffer = fs.readFileSync('imagen.jpg');
+ * const validacion = validarBufferImagen(buffer);
+ * if (validacion.esValido) {
+ *   console.log(`Imagen válida: ${validacion.formato}`);
+ * } else {
+ *   console.error('Errores:', validacion.errores);
+ * }
+ */
+function validarBufferImagen(buffer) {
+    const validacion = {
+        esValido: false,
+        formato: 'unknown',
+        errores: [],
+        advertencias: []
+    };
+
+    // Verificar que el buffer existe y tiene contenido
+    if (!buffer) {
+        validacion.errores.push('Buffer es nulo o indefinido');
+        return validacion;
+    }
+
+    if (buffer.length === 0) {
+        validacion.errores.push('Buffer está vacío');
+        return validacion;
+    }
+
+    // Verificar tamano mínimo
+    if (buffer.length &lt; 10) {
+        validacion.errores.push('Buffer demasiado pequeño para ser una imagen');
+        return validacion;
+    }
+
+    // Detectar formato
+    validacion.formato = detectarFormato(buffer);
+    if (validacion.formato === 'unknown') {
+        validacion.errores.push('Formato de imagen no reconocido');
+        return validacion;
+    }
+
+    // Verificaciones específicas por formato
+    switch (validacion.formato) {
+        case 'jpeg':
+            if (buffer[buffer.length - 2] !== 0xFF || buffer[buffer.length - 1] !== 0xD9) {
+                validacion.advertencias.push('JPEG podría estar truncado (no termina con FFD9)');
+            }
+            break;
+
+        case 'png':
+            if (buffer.length &lt; 33) {
+                validacion.errores.push('PNG demasiado pequeño');
+                return validacion;
+            }
+            break;
+    }
+
+    // Verificar tamano máximo razonable (100MB)
+    if (buffer.length > 100 * 1024 * 1024) {
+        validacion.advertencias.push('Imagen muy grande (>100MB)');
+    }
+
+    validacion.esValido = validacion.errores.length === 0;
+    return validacion;
+}
+
+/**
+ * Clase para gestionar múltiples buffers de imágenes
+ * @requires fs - Módulo fs de Node.js
+ * @requires crypto - Módulo crypto de Node.js
+ *
+ * @example
+ * const gestor = new GestorBuffersImagen();
+ * const buffer = fs.readFileSync('imagen.jpg');
+ * gestor.agregar('foto1', buffer, { titulo: 'Mi foto' });
+ * const lista = gestor.listar();
+ * console.log(`Buffers gestionados: ${lista.length}`);
+ */
+class GestorBuffersImagen {
+    constructor() {
+        this.buffers = new Map();
+    }
+
+    /**
+     * Agrega un buffer de imagen al gestor
+     * @param {string} id - Identificador único para el buffer
+     * @param {Buffer} buffer - Buffer de la imagen
+     * @param {Object} [metadatos={}] - Metadatos adicionales
+     * @throws {Error} Si el buffer no es válido
+     */
+    agregar(id, buffer, metadatos = {}) {
+        const validacion = validarBufferImagen(buffer);
+        if (!validacion.esValido) {
+            throw new Error(`Buffer inválido: ${validacion.errores.join(', ')}`);
+        }
+
+        this.buffers.set(id, {
+            buffer,
+            formato: validacion.formato,
+            tamano: buffer.length,
+            hash: crearHashImagen(buffer),
+            fechaAgregado: new Date(),
+            metadatos
+        });
+
+        console.log(`Buffer agregado con ID: ${id}`);
+    }
+
+    /**
+     * Obtiene información de un buffer por su ID
+     * @param {string} id - Identificador del buffer
+     * @returns {Object|undefined} Información del buffer o undefined si no existe
+     */
+    obtener(id) {
+        return this.buffers.get(id);
+    }
+
+    /**
+     * Guarda todos los buffers como archivos en un directorio
+     * @param {string} [directorio='./imagenes'] - Directorio donde guardar
+     * @returns {Array&lt;Object>} Lista de archivos guardados
+     */
+    guardarTodos(directorio = './imagenes') {
+        if (!fs.existsSync(directorio)) {
+            fs.mkdirSync(directorio, {recursive: true});
+        }
+
+        const resultados = [];
+
+        this.buffers.forEach((info, id) => {
+            const extension = info.formato === 'jpeg' ? 'jpg' : info.formato;
+            const nombreArchivo = `${id}.${extension}`;
+            const rutaCompleta = `${directorio}/${nombreArchivo}`;
+
+            fs.writeFileSync(rutaCompleta, info.buffer);
+            resultados.push({
+                id,
+                archivo: rutaCompleta,
+                formato: info.formato,
+                tamano: info.tamano
+            });
+        });
+
+        console.log(`Guardados ${resultados.length} archivos en ${directorio}`);
+        return resultados;
+    }
+
+    /**
+     * Lista todos los buffers gestionados
+     * @returns {Array&lt;Object>} Lista con información de todos los buffers
+     */
+    listar() {
+        const lista = [];
+        this.buffers.forEach((info, id) => {
+            lista.push({
+                id,
+                formato: info.formato,
+                tamano: info.tamano,
+                hash: info.hash,
+                fechaAgregado: info.fechaAgregado
+            });
+        });
+        return lista;
+    }
+}
+
+/**
+ * Detecta el formato de imagen basándose en la signature del buffer
+ * @param {Buffer} buffer - Buffer de la imagen
+ * @returns {string} Formato detectado ('jpeg', 'png', 'gif', 'bmp', 'webp', 'ico', 'tiff', 'unknown')
+ *
+ * @example
+ * const buffer = fs.readFileSync('imagen.jpg');
+ * const formato = detectarFormato(buffer);
+ * console.log(`Formato: ${formato}`); // Output: jpeg
+ */
+function detectarFormato(buffer) {
+    const signatures = {
+        jpeg: [0xFF, 0xD8, 0xFF],
+        png: [0x89, 0x50, 0x4E, 0x47],
+        gif: [0x47, 0x49, 0x46],
+        bmp: [0x42, 0x4D],
+        webp: [0x52, 0x49, 0x46, 0x46],
+        ico: [0x00, 0x00, 0x01, 0x00],
+        tiff: [0x49, 0x49, 0x2A, 0x00]
+    };
+
+    for (const [formato, signature] of Object.entries(signatures)) {
+        if (formato === 'webp') {
+            if (buffer.length >= 12 &amp;&amp;
+                buffer[0] === 0x52 &amp;&amp; buffer[1] === 0x49 &amp;&amp;
+                buffer[2] === 0x46 &amp;&amp; buffer[3] === 0x46 &amp;&amp;
+                buffer[8] === 0x57 &amp;&amp; buffer[9] === 0x45 &amp;&amp;
+                buffer[10] === 0x42 &amp;&amp; buffer[11] === 0x50) {
+                return 'webp';
+            }
+        } else {
+            let coincide = true;
+            for (let i = 0; i &lt; signature.length; i++) {
+                if (buffer[i] !== signature[i]) {
+                    coincide = false;
+                    break;
+                }
+            }
+            if (coincide) {
+                return formato;
+            }
+        }
+    }
+
+    return 'unknown';
+}
+
+/**
+ * Guarda un buffer como archivo de imagen (método síncrono)
+ * @requires fs - Módulo fs de Node.js
+ * @param {Buffer} buffer - Buffer de la imagen
+ * @param {string} nombreArchivo - Nombre del archivo a crear
+ *
+ * @example
+ * const buffer = Buffer.from(datosImagen);
+ * bufferAImagen(buffer, 'mi-imagen.jpg');
+ */
+function bufferAImagen(buffer, nombreArchivo) {
+    try {
+        // Escribir buffer directamente al archivo
+        fs.writeFileSync(nombreArchivo, buffer);
+        console.log(`Imagen guardada como: ${nombreArchivo}`);
+    } catch (error) {
+        console.error('Error guardando imagen:', error);
+    }
+}
+
+/**
+ * Guarda un buffer como archivo de imagen (método asíncrono)
+ * @requires fs - Módulo fs de Node.js
+ * @param {Buffer} buffer - Buffer de la imagen
+ * @param {string} nombreArchivo - Nombre del archivo a crear
+ * @returns {Promise&lt;string>} Promise que resuelve con el nombre del archivo
+ *
+ * @example
+ * const buffer = Buffer.from(datosImagen);
+ * bufferAImagenAsync(buffer, 'mi-imagen.jpg')
+ *   .then(nombre => console.log(`Guardado: ${nombre}`))
+ *   .catch(error => console.error('Error:', error));
+ */
+function bufferAImagenAsync(buffer, nombreArchivo) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(nombreArchivo, buffer, (error) => {
+            if (error) {
+                reject(error);
+            } else {
+                console.log(`Imagen guardada como: ${nombreArchivo}`);
+                resolve(nombreArchivo);
+            }
+        });
+    });
+}
+
+/**
+ * Guarda una imagen con detección automática de formato basada en el buffer
+ * @requires fs - Módulo fs de Node.js
+ * @param {Buffer} buffer - Buffer de la imagen
+ * @param {string} nombreBase - Nombre base del archivo (sin extensión)
+ * @returns {string} Nombre completo del archivo guardado
+ *
+ * @example
+ * const buffer = fs.readFileSync('temp-image');
+ * const archivo = guardarImagenConFormato(buffer, 'nueva-imagen');
+ * console.log(`Guardado como: ${archivo}`); // Output: nueva-imagen.jpg
+ */
+function guardarImagenConFormato(buffer, nombreBase) {
+    const formato = detectarFormato(buffer);
+
+    if (formato === 'unknown') {
+        console.warn('Formato de imagen no reconocido, guardando como .bin');
+        const nombreArchivo = `${nombreBase}.bin`;
+        bufferAImagen(buffer, nombreArchivo);
+        return nombreArchivo;
+    }
+
+    const extension = formato === 'jpeg' ? 'jpg' : formato;
+    const nombreArchivo = `${nombreBase}.${extension}`;
+    bufferAImagen(buffer, nombreArchivo);
+    return nombreArchivo;
+}
+
+/**
+ * Verifica si un buffer contiene una imagen válida
+ * @param {Buffer} buffer - Buffer a verificar
+ * @returns {boolean} true si es una imagen válida, false en caso contrario
+ *
+ * @example
+ * const buffer = fs.readFileSync('archivo.jpg');
+ * if (esImagenValida(buffer)) {
+ *   console.log('Es una imagen válida');
+ * } else {
+ *   console.log('No es una imagen válida');
+ * }
+ */
+function esImagenValida(buffer) {
+    if (!buffer || buffer.length &lt; 4) {
+        return false;
+    }
+
+    const formato = detectarFormato(buffer);
+    return formato !== 'unknown';
+}
+
+/**
+ * Analiza un buffer y proporciona información detallada sobre su contenido
+ * @param {Buffer} buffer - Buffer a analizar
+ * @returns {Object|null} Información del buffer o null si está vacío
+ * @returns {number} returns.tamano - Tamaño del buffer en bytes
+ * @returns {string} returns.formato - Formato de imagen detectado
+ * @returns {string} returns.primerosBytesHex - Primeros 16 bytes en hexadecimal
+ * @returns {Array&lt;number>} returns.primerosBytesArray - Primeros 16 bytes como array
+ * @returns {boolean} returns.esImagen - Si el buffer contiene una imagen válida
+ *
+ * @example
+ * const buffer = fs.readFileSync('imagen.png');
+ * const info = analizarBuffer(buffer);
+ * console.log(`Formato: ${info.formato}, Tamaño: ${info.tamano} bytes`);
+ */
+function analizarBuffer(buffer) {
+    if (!buffer) {
+        console.log('Buffer vacío o nulo');
+        return null;
+    }
+
+    const info = {
+        tamano: buffer.length,
+        formato: detectarFormato(buffer),
+        primerosBytesHex: buffer.slice(0, 16).toString('hex'),
+        primerosBytesArray: Array.from(buffer.slice(0, 16)),
+        esImagen: esImagenValida(buffer)
+    };
+
+    console.log('Información del buffer:', info);
+    return info;
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Hecho con <small>❤</small> por <a
+        href="https://github.com/xdany01">@xdany01</a> usando la plantilla de <a
+        href="https://github.com/clenemt/docdash">docdash</a>.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>

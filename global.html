@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>SelectorContent - Documentation</title>
+    <title>Global - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -37,7 +37,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">SelectorContent</h1>
+    <h1 class="page-title">Global</h1>
     
 
     
@@ -51,11 +51,9 @@
     
         <h2>
         
-            SelectorContent
+            
         
         </h2>
-        
-            <div class="class-description usertext"><p>Clase para seleccionar y extraer contenido de una página web utilizando Cheerio y un validador.</p></div>
         
     
 </header>
@@ -66,25 +64,9 @@
         
             
 
-    
-    <h2>Constructor</h2>
-    
-
-    <h4 class="name" id="SelectorContent"><span class="type-signature"></span>new SelectorContent<span class="signature">($, validator)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
 <dl class="details">
     
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line4">line 4</a>
-    </li></ul></dd>
     
 
     
@@ -121,106 +103,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>$</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-
-            
-            </td>
-
             
 
             
-
-            <td class="description last"><p>Función de selección (por ejemplo, Cheerio o jQuery).</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>validator</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Objeto validador con métodos de validación.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
         </div>
     
@@ -229,13 +114,6 @@
 
     
 
-    
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="SelectorContent.html">SelectorContent</a></dt>
-            <dd></dd>
-        </dl>
     
     
     
@@ -254,7 +132,7 @@
 
     
 
-    <h4 class="name" id="elementsToArray"><span class="type-signature"></span>elementsToArray<span class="signature">(elements)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    <h4 class="name" id="analizarBuffer"><span class="type-signature"></span>analizarBuffer<span class="signature">(buffer)</span><span class="type-signature"> &rarr; {Object|null|number|string|string|Array.&lt;number>|boolean}</span></h4>
 
     
 
@@ -264,1427 +142,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Convierte elementos a un array</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Analiza un buffer y proporciona información detallada sobre su contenido</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line323">line 323</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Convertir colección de elementos a arrayconst paragraphs = this.$('p');const arrayOfParagraphs = this.elementsToArray(paragraphs);// Para HTML con 3 párrafos// Resultado: [&lt;p>Párrafo 1&lt;/p>, &lt;p>Párrafo 2&lt;/p>, &lt;p>Párrafo 3&lt;/p>]</code></pre>
-
-    <pre class="prettyprint"><code>// Colección vacíaconst empty = this.$('div.nonexistent');const emptyArray = this.elementsToArray(empty);// Resultado: []</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>elements</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Objeto jQuery/Cheerio con elementos</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:cheerio</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Array de elementos</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getAttributeValue"><span class="type-signature"></span>getAttributeValue<span class="signature">(selector, attribute)</span><span class="type-signature"> &rarr; {string|null}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Obtiene el valor de un atributo de un elemento</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line250">line 250</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Obtener el valor del atributo href de un enlaceconst href = this.getAttributeValue('a.link', 'href');// Resultado: "https://example.com"</code></pre>
-
-    <pre class="prettyprint"><code>// Obtener el valor de un atributo personalizadoconst dataId = this.getAttributeValue('.product', 'data-id');// Resultado: "12345"</code></pre>
-
-    <pre class="prettyprint"><code>// Elemento que no existeconst notFound = this.getAttributeValue('.nonexistent', 'id');// Resultado: null</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Selector CSS para encontrar el elemento</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>attribute</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Nombre del atributo a obtener</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:cheerio</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Valor del atributo o null si el elemento no existe</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-|
-
-<span class="param-type">null</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getCleanText"><span class="type-signature"></span>getCleanText<span class="signature">(elements)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Obtiene el texto limpio del primer elemento</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line273">line 273</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Obtener el texto limpio de un elementoconst elements = this.$('p.description');const text = this.getCleanText(elements);// Para &lt;p class="description">  Texto con   espacios   &lt;/p>// Resultado: "Texto con espacios"</code></pre>
-
-    <pre class="prettyprint"><code>// Colección vacíaconst empty = this.$('div.nonexistent');const text = this.getCleanText(empty);// Resultado: ""</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>elements</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Objeto jQuery/Cheerio con elementos</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:cheerio</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Texto limpio del primer elemento o cadena vacía si no hay elementos</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getContent"><span class="type-signature"></span>getContent<span class="signature">(options)</span><span class="type-signature"> &rarr; {*}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Obtiene contenido basado en selectores con fallbacks</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line62">line 62</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Ejemplo básicoconst title = content.getContent({  selectors: 'h1',  defaultValue: 'Sin título'});// Resultado: "Título"</code></pre>
-
-    <pre class="prettyprint"><code>// Usando múltiples selectores con fallbackconst price = content.getContent({  selectors: ['.price', '.cost', 'span.value'],  defaultValue: '0',  toText: true});</code></pre>
-
-    <pre class="prettyprint"><code>// Obteniendo HTML en lugar de textoconst htmlContent = content.getContent({  selectors: '.product-description',  toText: false});</code></pre>
-
-    <pre class="prettyprint"><code>// Usando el modo completed para obtener información detalladaconst result = content.getContent({  selectors: ['.price', '.cost'],  completed: true});// Resultado: {//   selectors: ['.price', '.cost'],//   matchSelector: '.price',//   result: '100'// }</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Opciones de configuración</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selectors</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-|
-
-<span class="param-type">Array</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Selector único o array de selectores</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>defaultValue</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Valor predeterminado si no se encuentra contenido</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toArray</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve array de elementos</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toText</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve texto, si es false, devuelve HTML</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>completed</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve objeto completo con información adicional</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:Validator</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Contenido encontrado o valor predeterminado, u objeto completo si completed=true</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">*</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getElements"><span class="type-signature"></span>getElements<span class="signature">(selector)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Obtiene elementos que coinciden con un selector</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line222">line 222</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Obtener todos los párrafosconst paragraphs = this.getElements('p');// Resultado: Objeto Cheerio con todos los elementos &lt;p></code></pre>
-
-    <pre class="prettyprint"><code>// Selector más complejoconst items = this.getElements('ul.menu > li.item');// Resultado: Objeto Cheerio con los elementos &lt;li class="item"> dentro de &lt;ul class="menu"></code></pre>
-
-    <pre class="prettyprint"><code>// Selector vacíoconst empty = this.getElements('');// Resultado: Objeto Cheerio vacío</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Selector CSS para buscar elementos</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:cheerio</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Objeto jQuery/Cheerio con los elementos encontrados</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getHtml"><span class="type-signature"></span>getHtml<span class="signature">(elements)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Obtiene el HTML del primer elemento</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line298">line 298</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Obtener el HTML interno de un elementoconst elements = this.$('div.container');const html = this.getHtml(elements);// Para &lt;div class="container">&lt;span>Contenido&lt;/span>&lt;/div>// Resultado: "&lt;span>Contenido&lt;/span>"</code></pre>
-
-    <pre class="prettyprint"><code>// Colección vacíaconst empty = this.$('div.nonexistent');const html = this.getHtml(empty);// Resultado: ""</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>elements</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Objeto jQuery/Cheerio con elementos</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:cheerio</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>HTML del primer elemento o cadena vacía si no hay elementos</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getValueOrDefault"><span class="type-signature"></span>getValueOrDefault<span class="signature">(value, defaultValue)</span><span class="type-signature"> &rarr; {*}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un valor está vacío y devuelve un valor predeterminado si es así</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line198">line 198</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Valor no vacíoconst result = this.getValueOrDefault("Texto", "Predeterminado");// Resultado: "Texto"</code></pre>
-
-    <pre class="prettyprint"><code>// Valor vacíoconst result = this.getValueOrDefault("", "Predeterminado");// Resultado: "Predeterminado"</code></pre>
-
-    <pre class="prettyprint"><code>// Valor nullconst result = this.getValueOrDefault(null, "Predeterminado");// Resultado: "Predeterminado"</code></pre>
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Valor a verificar</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>defaultValue</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Valor predeterminado a devolver si está vacío</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<h5 class="h5-requires">Requires:</h5>
-<ul>
-    <li>module:Validator</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>Valor original o valor predeterminado</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">*</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="processMultipleSelectors"><span class="type-signature"></span>processMultipleSelectors<span class="signature">(selectors, toArray, toText)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Procesa un array de selectores y devuelve el primer resultado no vacío</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line102">line 102</a>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line583">line 583</a>
     </li></ul></dd>
     
 
@@ -1731,7 +195,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>// Internamente usado por getContentconst result = this.processMultipleSelectors(  ['.price', '.cost', 'span.value'],  false,  true);// Si '.price' existe y contiene "100":// Resultado: {//   selectors: ['.price', '.cost', 'span.value'],//   matchSelector: '.price',//   result: '100'// }</code></pre>
+    <pre class="prettyprint"><code>const buffer = fs.readFileSync('imagen.png');const info = analizarBuffer(buffer);console.log(`Formato: ${info.formato}, Tamaño: ${info.tamano} bytes`);</code></pre>
 
 
 
@@ -1761,13 +225,13 @@
 
         <tr>
             
-                <td class="name"><code>selectors</code></td>
+                <td class="name"><code>buffer</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Array</span>
+<span class="param-type">Buffer</span>
 
 
 
@@ -1778,20 +242,728 @@
 
             
 
-            <td class="description last"><p>Array de selectores a procesar</p></td>
+            <td class="description last"><p>Buffer a analizar</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>Información del buffer o null si está vacío</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.tamano - Tamaño del buffer en bytes</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.formato - Formato de imagen detectado</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.primerosBytesHex - Primeros 16 bytes en hexadecimal</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.primerosBytesArray - Primeros 16 bytes como array</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;number></span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.esImagen - Si el buffer contiene una imagen válida</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="base64ABuffer"><span class="type-signature"></span>base64ABuffer<span class="signature">(base64String)</span><span class="type-signature"> &rarr; {Buffer|null}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Convierte una cadena Base64 a Buffer de imagen</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const base64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...';const buffer = base64ABuffer(base64);if (buffer) {  console.log(`Buffer creado: ${buffer.length} bytes`);}</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>base64String</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Cadena en formato Base64 (con o sin prefijo data:image)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Buffer de la imagen o null si hay error</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Buffer</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="bufferAFormatos"><span class="type-signature"></span>bufferAFormatos<span class="signature">(buffer)</span><span class="type-signature"> &rarr; {Object|null|Array.&lt;number>|string|string|Uint8Array|string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Convierte un buffer a múltiples formatos de salida</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line222">line 222</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const buffer = Buffer.from([255, 216, 255, 224]);const formatos = bufferAFormatos(buffer);console.log(`Hex: ${formatos.hex}`);console.log(`Base64: ${formatos.base64}`);</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>buffer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Buffer a convertir</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>Objeto con diferentes formatos o null si hay error</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.array - Array de bytes</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;number></span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.hex - Representación hexadecimal</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.base64 - Cadena Base64</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.uint8Array - Uint8Array para navegadores</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Uint8Array</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.json - JSON serializado del array</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="bufferAImagen"><span class="type-signature"></span>bufferAImagen<span class="signature">(buffer, nombreArchivo)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Guarda un buffer como archivo de imagen (método síncrono)</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line482">line 482</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const buffer = Buffer.from(datosImagen);bufferAImagen(buffer, 'mi-imagen.jpg');</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>buffer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Buffer de la imagen</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>toArray</code></td>
+                <td class="name"><code>nombreArchivo</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">boolean</span>
+<span class="param-type">string</span>
 
 
 
@@ -1802,31 +974,7 @@
 
             
 
-            <td class="description last"><p>Si es true, devuelve un array de elementos</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toText</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve texto, si es false, devuelve HTML</p></td>
+            <td class="description last"><p>Nombre del archivo a crear</p></td>
         </tr>
 
     
@@ -1838,7 +986,176 @@
 
 <h5 class="h5-requires">Requires:</h5>
 <ul>
-    <li>module:Validator</li>
+    <li>module:fs</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="bufferAImagenAsync"><span class="type-signature"></span>bufferAImagenAsync<span class="signature">(buffer, nombreArchivo)</span><span class="type-signature"> &rarr; {Promise.&lt;string>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Guarda un buffer como archivo de imagen (método asíncrono)</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line505">line 505</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const buffer = Buffer.from(datosImagen);bufferAImagenAsync(buffer, 'mi-imagen.jpg')  .then(nombre => console.log(`Guardado: ${nombre}`))  .catch(error => console.error('Error:', error));</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>buffer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Buffer de la imagen</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nombreArchivo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Nombre del archivo a crear</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<h5 class="h5-requires">Requires:</h5>
+<ul>
+    <li>module:fs</li>
 </ul>
 
 
@@ -1857,9 +1174,199 @@
 
         
 <div class="param-desc">
-    <ul>
-<li>Objeto con el resultado, selector utilizado y todos los selectores</li>
+    <p>Promise que resuelve con el nombre del archivo</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;string></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="compararBuffers"><span class="type-signature"></span>compararBuffers<span class="signature">(buffer1, buffer2)</span><span class="type-signature"> &rarr; {Object|boolean|string|string|number|number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Compara dos buffers de imágenes usando sus hashes SHA256</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line144">line 144</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const buffer1 = fs.readFileSync('imagen1.jpg');const buffer2 = fs.readFileSync('imagen2.jpg');const comparacion = compararBuffers(buffer1, buffer2);console.log(`Son iguales: ${comparacion.sonIguales}`);</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>buffer1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Primer buffer a comparar</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>buffer2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Segundo buffer a comparar</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<h5 class="h5-requires">Requires:</h5>
+<ul>
+    <li>module:crypto</li>
 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>Objeto con resultado de la comparación</p>
 </div>
 
 
@@ -1876,8 +1383,113 @@
 
     </dd>
 </dl>
-
+</li>
     
+        <li>
+<div class="param-desc">
+    <p>returns.sonIguales - Si los buffers son idénticos</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.hash1 - Hash del primer buffer</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.hash2 - Hash del segundo buffer</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.tamano1 - Tamaño del primer buffer</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.tamano2 - Tamaño del segundo buffer</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
 
 
 
@@ -1886,7 +1498,7 @@
 
     
 
-    <h4 class="name" id="processSelector"><span class="type-signature"></span>processSelector<span class="signature">(selector, toArray, toText)</span><span class="type-signature"> &rarr; {Array|string}</span></h4>
+    <h4 class="name" id="crearHashImagen"><span class="type-signature"></span>crearHashImagen<span class="signature">(buffer)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
     
 
@@ -1896,13 +1508,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Procesa elementos según el selector especificado</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Crea un hash SHA256 de un buffer de imagen para verificar integridad</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line167">line 167</a>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -1947,13 +1559,9 @@
 
 
 
-    <h5 class="h5-examples">Examples</h5>
+    <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>// Obtener texto de un elementoconst titleText = this.processSelector('h1', false, true);// Resultado: "Título"</code></pre>
-
-    <pre class="prettyprint"><code>// Obtener HTML de un elementoconst titleHtml = this.processSelector('h1', false, false);// Resultado: "Título"</code></pre>
-
-    <pre class="prettyprint"><code>// Obtener array de elementosconst paragraphs = this.processSelector('p', true, false);// Resultado: [&lt;p>Párrafo 1&lt;/p>, &lt;p>Párrafo 2&lt;/p>]</code></pre>
+    <pre class="prettyprint"><code>const buffer = fs.readFileSync('imagen.jpg');const hash = crearHashImagen(buffer);console.log(`Hash: ${hash}`);</code></pre>
 
 
 
@@ -1983,13 +1591,13 @@
 
         <tr>
             
-                <td class="name"><code>selector</code></td>
+                <td class="name"><code>buffer</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">Buffer</span>
 
 
 
@@ -2000,55 +1608,7 @@
 
             
 
-            <td class="description last"><p>Selector CSS para buscar elementos</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toArray</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve un array de elementos, si es false, devuelve un solo elemento</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toText</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve el texto del elemento, si es false, devuelve el HTML</p></td>
+            <td class="description last"><p>Buffer de la imagen</p></td>
         </tr>
 
     
@@ -2060,7 +1620,7 @@
 
 <h5 class="h5-requires">Requires:</h5>
 <ul>
-    <li>module:cheerio</li>
+    <li>module:crypto</li>
 </ul>
 
 
@@ -2079,9 +1639,7 @@
 
         
 <div class="param-desc">
-    <ul>
-<li>Array de elementos o texto/HTML del primer elemento</li>
-</ul>
+    <p>Hash SHA256 en formato hexadecimal</p>
 </div>
 
 
@@ -2092,9 +1650,6 @@
     </dt>
     <dd>
         
-<span class="param-type">Array</span>
-|
-
 <span class="param-type">string</span>
 
 
@@ -2111,7 +1666,7 @@
 
     
 
-    <h4 class="name" id="processSingleSelector"><span class="type-signature"></span>processSingleSelector<span class="signature">(selector, toArray, toText)</span><span class="type-signature"> &rarr; {string|Array|null}</span></h4>
+    <h4 class="name" id="descargarImagenABuffer"><span class="type-signature"></span>descargarImagenABuffer<span class="signature">(imageUrl)</span><span class="type-signature"> &rarr; {Promise.&lt;Buffer>}</span></h4>
 
     
 
@@ -2121,13 +1676,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Procesa un solo selector que puede ser string o array [selector, attribute]</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Descarga una imagen desde una URL y la convierte a Buffer</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="selectorContent-fn.js.html">selectorContent-fn.js</a>, <a href="selectorContent-fn.js.html#line136">line 136</a>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -2172,11 +1727,9 @@
 
 
 
-    <h5 class="h5-examples">Examples</h5>
+    <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>// Procesar un selector de textoconst result = this.processSingleSelector('h1', false, true);// Resultado: "Título"</code></pre>
-
-    <pre class="prettyprint"><code>// Procesar un selector de atributoconst href = this.processSingleSelector(['a.link', 'href'], false, true);// Resultado: "https://example.com"</code></pre>
+    <pre class="prettyprint"><code>descargarImagenABuffer('https://example.com/imagen.jpg')  .then(buffer => console.log(`Imagen descargada: ${buffer.length} bytes`))  .catch(error => console.error('Error:', error));</code></pre>
 
 
 
@@ -2206,16 +1759,13 @@
 
         <tr>
             
-                <td class="name"><code>selector</code></td>
+                <td class="name"><code>imageUrl</code></td>
             
 
             <td class="type">
             
                 
 <span class="param-type">string</span>
-|
-
-<span class="param-type">Array</span>
 
 
 
@@ -2226,20 +1776,196 @@
 
             
 
-            <td class="description last"><p>Selector o array [selector, atributo]</p></td>
+            <td class="description last"><p>URL de la imagen a descargar</p></td>
         </tr>
 
+    
+    </tbody>
+</table>
+
+
+
+
+<h5 class="h5-requires">Requires:</h5>
+<ul>
+    <li>module:http</li>
+
+    <li>module:https</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Si hay error HTTP o de red</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Promise que resuelve con el buffer de la imagen</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Buffer></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="detectarFormato"><span class="type-signature"></span>detectarFormato<span class="signature">(buffer)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Detecta el formato de imagen basándose en la signature del buffer</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line435">line 435</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const buffer = fs.readFileSync('imagen.jpg');const formato = detectarFormato(buffer);console.log(`Formato: ${formato}`); // Output: jpeg</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
             
-                <td class="name"><code>toArray</code></td>
+                <td class="name"><code>buffer</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">boolean</span>
+<span class="param-type">Buffer</span>
 
 
 
@@ -2250,31 +1976,7 @@
 
             
 
-            <td class="description last"><p>Si es true, devuelve un array de elementos</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>toText</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Si es true, devuelve texto, si es false, devuelve HTML</p></td>
+            <td class="description last"><p>Buffer de la imagen</p></td>
         </tr>
 
     
@@ -2300,9 +2002,7 @@
 
         
 <div class="param-desc">
-    <ul>
-<li>Resultado del procesamiento del selector</li>
-</ul>
+    <p>Formato detectado ('jpeg', 'png', 'gif', 'bmp', 'webp', 'ico', 'tiff', 'unknown')</p>
 </div>
 
 
@@ -2314,12 +2014,6 @@
     <dd>
         
 <span class="param-type">string</span>
-|
-
-<span class="param-type">Array</span>
-|
-
-<span class="param-type">null</span>
 
 
 
@@ -2327,6 +2021,1126 @@
 </dl>
 
     
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="esImagenValida"><span class="type-signature"></span>esImagenValida<span class="signature">(buffer)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Verifica si un buffer contiene una imagen válida</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line559">line 559</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const buffer = fs.readFileSync('archivo.jpg');if (esImagenValida(buffer)) {  console.log('Es una imagen válida');} else {  console.log('No es una imagen válida');}</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>buffer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Buffer a verificar</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>true si es una imagen válida, false en caso contrario</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="guardarConMetadatos"><span class="type-signature"></span>guardarConMetadatos<span class="signature">(buffer, nombreBase, metadatos<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object|string|string|Object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Guarda un buffer como imagen con archivo de metadatos asociado</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line181">line 181</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const buffer = fs.readFileSync('temp.jpg');const resultado = guardarConMetadatos(buffer, 'mi-imagen', {  autor: 'Juan Pérez',  descripcion: 'Foto de prueba'});console.log(`Guardado: ${resultado.imagen}`);</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>buffer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Buffer de la imagen a guardar</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nombreBase</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Nombre base para los archivos (sin extensión)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>metadatos</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Metadatos adicionales a incluir</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<h5 class="h5-requires">Requires:</h5>
+<ul>
+    <li>module:fs</li>
+
+    <li>module:crypto</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>Información de los archivos creados</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.imagen - Nombre del archivo de imagen</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.metadatos - Nombre del archivo de metadatos</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.info - Información completa de metadatos</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="guardarImagenConFormato"><span class="type-signature"></span>guardarImagenConFormato<span class="signature">(buffer, nombreBase)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Guarda una imagen con detección automática de formato basada en el buffer</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line530">line 530</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const buffer = fs.readFileSync('temp-image');const archivo = guardarImagenConFormato(buffer, 'nueva-imagen');console.log(`Guardado como: ${archivo}`); // Output: nueva-imagen.jpg</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>buffer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Buffer de la imagen</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nombreBase</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Nombre base del archivo (sin extensión)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<h5 class="h5-requires">Requires:</h5>
+<ul>
+    <li>module:fs</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Nombre completo del archivo guardado</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="streamABuffer"><span class="type-signature"></span>streamABuffer<span class="signature">(stream)</span><span class="type-signature"> &rarr; {Promise.&lt;Buffer>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Convierte un stream de datos a Buffer</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line87">line 87</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const fileStream = fs.createReadStream('imagen.jpg');streamABuffer(fileStream)  .then(buffer => console.log(`Stream convertido: ${buffer.length} bytes`))  .catch(error => console.error('Error:', error));</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>stream</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ReadableStream</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Stream de datos de imagen</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Si hay error en el stream</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Promise que resuelve con el buffer completo</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Buffer></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="validarBufferImagen"><span class="type-signature"></span>validarBufferImagen<span class="signature">(buffer)</span><span class="type-signature"> &rarr; {Object|boolean|string|Array.&lt;string>|Array.&lt;string>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Realiza validación avanzada de un buffer de imagen</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utilitiesImages-fn.js.html">utilitiesImages-fn.js</a>, <a href="utilitiesImages-fn.js.html#line268">line 268</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const buffer = fs.readFileSync('imagen.jpg');const validacion = validarBufferImagen(buffer);if (validacion.esValido) {  console.log(`Imagen válida: ${validacion.formato}`);} else {  console.error('Errores:', validacion.errores);}</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>buffer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Buffer a validar</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>Resultado de la validación</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.esValido - Si el buffer es una imagen válida</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.formato - Formato detectado de la imagen</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.errores - Lista de errores encontrados</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>returns.advertencias - Lista de advertencias</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
 
 
 
