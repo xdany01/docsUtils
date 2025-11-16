@@ -343,7 +343,101 @@ export class UtilsString {
      * //"Este texto contiene entidades HTML como á; para á y é; para é."
      */
     static decodeHtmlEntities(str) {
-        return str.replace(/&amp;#(\w+)(^\w|;)?/g, (_, dec) => String.fromCharCode(dec));
+        const named = {
+            "amp": "&amp;",
+            "lt": "&lt;",
+            "gt": ">",
+            "quot": "\"",
+            "apos": "'",
+            "nbsp": "\u00A0",
+            "iexcl": "¡",
+            "iquest": "¿",
+
+            "copy": "©",
+            "reg": "®",
+            "trade": "™",
+            "para": "¶",
+            "sect": "§",
+            "deg": "°",
+            "micro": "µ",
+            "middot": "·",
+            "bull": "•",
+            "hellip": "…",
+            "prime": "′",
+            "Prime": "″",
+            "oline": "‾",
+
+            "laquo": "«",
+            "raquo": "»",
+            "lsquo": "‘",
+            "rsquo": "’",
+            "ldquo": "“",
+            "rdquo": "”",
+            "sbquo": "‚",
+            "bdquo": "„",
+
+            "euro": "€",
+            "pound": "£",
+            "yen": "¥",
+            "cent": "¢",
+            "curren": "¤",
+
+            "plusmn": "±",
+            "times": "×",
+            "divide": "÷",
+            "sup1": "¹",
+            "sup2": "²",
+            "sup3": "³",
+            "frac12": "½",
+            "frac14": "¼",
+            "frac34": "¾",
+
+            "ne": "≠",
+            "le": "≤",
+            "ge": "≥",
+            "equiv": "≡",
+            "asymp": "≈",
+            "sim": "∼",
+            "prop": "∝",
+            "radic": "√",
+            "infin": "∞",
+            "int": "∫",
+            "sum": "∑",
+            "prod": "∏",
+            "nabla": "∇",
+            "forall": "∀",
+            "exist": "∃",
+            "not": "¬",
+            "and": "∧",
+            "or": "∨",
+            "oplus": "⊕",
+            "otimes": "⊗",
+            "perp": "⊥",
+            "sdot": "⋅",
+
+            "larr": "←",
+            "uarr": "↑",
+            "rarr": "→",
+            "darr": "↓",
+            "harr": "↔",
+            "crarr": "↵",
+            "nlarr": "↚",
+            "nrarr": "↛",
+            "nharr": "↮",
+            "lArr": "⇐",
+            "uArr": "⇑",
+            "rArr": "⇒",
+            "dArr": "⇓",
+            "hArr": "⇔",
+        };
+
+        return str
+            // entidades nombradas
+            .replace(/&amp;([a-zA-Z]+);/g, (_, name) => named[name] || "&amp;" + name + ";")
+            // entidades numéricas decimales
+            .replace(/&amp;#(\d+);/g, (_, dec) => String.fromCharCode(dec))
+            // entidades hexadecimales
+            .replace(/&amp;#x([0-9A-Fa-f]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)));
     }
 
     /**
