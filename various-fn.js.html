@@ -2000,26 +2000,28 @@ function sortByArray(objects, referenceArray, property) {
  * @param {Function} callBack - La función que se ejecutará para cada elemento.
  * @param {Array} elements - La lista de elementos a procesar.
  * @param {number} [CONCURRENCY=50] - El número máximo de procesos concurrentes.
- * @returns {Promise&lt;Array>} - Array con los resultados o errores de cada elemento
+ * @returns {Promise&lt;Object>} - Objeto con resultados y errores
  */
 async function processWithConcurrency(callBack, elements, CONCURRENCY = 50) {
     let currentIndex = 0;
     const results = [];
     const errors = [];
 
-    const workers = Array.from({ length: Math.min(CONCURRENCY, elements.length) }, async (_, workerIndex) => {
-        while (currentIndex &lt; elements.length) {
-            const elementIndex = currentIndex++;
-            const element = elements[elementIndex];
+    const workers = Array.from({ length: Math.min(CONCURRENCY, elements.length) }, () => {
+        return (async () => {
+            while (currentIndex &lt; elements.length) {
+                const elementIndex = currentIndex++;
+                const element = elements[elementIndex];
 
-            try {
-                const result = await callBack(element);
-                results[elementIndex] = result;
-            } catch (error) {
-                errors.push({ index: elementIndex, element, error });
-                console.log(`Error al procesar el elemento con indice ${elementIndex}:`, error);
+                try {
+                    const result = await callBack(element);
+                    results[elementIndex] = { success: true, index: elementIndex, result };
+                } catch (error) {
+                    errors.push({ success: false, index: elementIndex, element, error });
+                    console.log(`Error al procesar el elemento con indice ${elementIndex}:`, error);
+                }
             }
-        }
+        })();
     });
 
     await Promise.all(workers);
@@ -2036,27 +2038,40 @@ async function processWithConcurrency(callBack, elements, CONCURRENCY = 50) {
  * @param {Function} callBack - La función que se ejecutará para cada elemento.
  * @param {Array} elements - La lista de elementos a procesar.
  * @param {number} [batchSize=50] - El tamaño de cada lote.
- * @returns {Promise&lt;Array>} - Array con todos los resultados
+ * @returns {Promise&lt;Object>} - Objeto con resultados y errores
  */
 async function processInBatches(callBack, elements, batchSize = 50) {
     const results = [];
+    const errors = [];
 
     for (let i = 0; i &lt; elements.length; i += batchSize) {
         const batch = elements.slice(i, i + batchSize);
         const batchPromises = batch.map(async (element, index) => {
+            const globalIndex = i + index;
             try {
-                return await callBack(element);
+                return { success: true, index: globalIndex, result: await callBack(element) };
             } catch (error) {
-                console.log(`Error al procesar el elemento con indice ${i + index}:`, error);
-                return null;
+                console.log(`Error al procesar el elemento con indice ${globalIndex}:`, error);
+                return { success: false, index: globalIndex, element, error };
             }
         });
 
         const batchResults = await Promise.all(batchPromises);
-        results.push(...batchResults);
+        
+        batchResults.forEach(item => {
+            if (item.success) {
+                results[item.index] = item.result;
+            } else {
+                errors.push({ index: item.index, element: item.element, error: item.error });
+            }
+        });
     }
 
-    return results;
+    if (errors.length > 0) {
+        console.log(`Completado con ${errors.length} errores de ${elements.length} elementos`);
+    }
+
+    return { results, errors };
 }
 
 /**
